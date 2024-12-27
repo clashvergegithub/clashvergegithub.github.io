@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-31732.htm" />
+    <meta charset="utf-8">
+    <title>shiro的过滤器和权限控制</title>
+        <meta name="description" content="shiro过滤器 首先从客户端发来的所有请求都经过Shiro过滤器，如果用户没有认证的都打回去进行认证，认证成功的，再判断是否具有访问某类资源(公有资源，私有资源)的权限，如果没有权限，访问失败;如果" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+                        <a class="logo mr-3" href="/">
+                <span>Clash Verge Github</span>
+            </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="#" class="nav-link">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">联系</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">shiro的过滤器和权限控制</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="shiro_0" rel="nofollow"></a>shiro过滤器</h2> <p>首先从客户端发来的所有请求都经过Shiro过滤器，如果用户没有认证的都打回去进行认证，认证成功的，再判断是否具有访问某类资源(公有资源，私有资源)的权限，如果没有权限，访问失败;如果有权限访问成功。注意：客户端传来的token要和realm中的认证信息进行相同规则的比较（加密算法要一致）。<br /> 常见过滤器：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/1354760216592bb155a0618905548527.jpg" alt="shiro的过滤器和权限控制"><br /> 1、在shiro配置类中配置，使用 <code>filterFactoryBean.setFilterChainDefinitionMa()</code> 简单的配置过滤规则</p> <pre><code class="prism language-java"> <span class="token annotation punctuation">@Bean</span>     <span class="token keyword">public</span> <span class="token class-name">ShiroFilterFactoryBean</span> <span class="token function">getShiroFilterFactoryBean</span><span class="token punctuation">(</span><span class="token class-name">DefaultWebSecurityManager</span> defaultWebSecurityManager<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token comment">// 创建ShiroFilterFactoryBean</span>         <span class="token class-name">ShiroFilterFactoryBean</span> filterFactoryBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShiroFilterFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//设置安全管理器</span>         filterFactoryBean<span class="token punctuation">.</span><span class="token function">setSecurityManager</span><span class="token punctuation">(</span>defaultWebSecurityManager<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//配置受限资源,index是受限资源，authc</span>         <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// /**代表匹配所有url</span>         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"/**"</span><span class="token punctuation">,</span> <span class="token string">"authc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// /user/login 是可以匿名访问的也就是公有资源</span>         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"/user/login"</span><span class="token punctuation">,</span> <span class="token string">"anon"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         filterFactoryBean<span class="token punctuation">.</span><span class="token function">setFilterChainDefinitionMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// 设置默认认证路径 其实shiro默认的认证路径就是login.jsp</span>         filterFactoryBean<span class="token punctuation">.</span><span class="token function">setLoginUrl</span><span class="token punctuation">(</span><span class="token string">"/login.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token keyword">return</span> filterFactoryBean<span class="token punctuation">;</span>      <span class="token punctuation">}</span> </code></pre> <p>2、重写shiro提供的过滤器<br /> 重写角色权限的过滤器</p> <pre><code class="prism language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyAuthorizationFilter</span> <span class="token keyword">extends</span> <span class="token class-name">RolesAuthorizationFilter</span> <span class="token punctuation">{<!-- --></span>      <span class="token annotation punctuation">@Override</span>    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isAccessAllowed</span><span class="token punctuation">(</span><span class="token class-name">ServletRequest</span> request<span class="token punctuation">,</span> <span class="token class-name">ServletResponse</span> response<span class="token punctuation">,</span> <span class="token class-name">Object</span> mappedValue<span class="token punctuation">)</span>         <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">boolean</span> allowed <span class="token operator">=</span><span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">isAccessAllowed</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">,</span> mappedValue<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>allowed<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">String</span> method <span class="token operator">=</span> <span class="token class-name">WebUtils</span><span class="token punctuation">.</span><span class="token function">toHttp</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">StringUtils</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span><span class="token string">"OPTIONS"</span><span class="token punctuation">,</span> method<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>     <span class="token punctuation">}</span>     <span class="token keyword">return</span> allowed<span class="token punctuation">;</span>    <span class="token punctuation">}</span>      <span class="token annotation punctuation">@Override</span>    <span class="token keyword">protected</span> <span class="token keyword">boolean</span> <span class="token function">onAccessDenied</span><span class="token punctuation">(</span><span class="token class-name">ServletRequest</span> request<span class="token punctuation">,</span> <span class="token class-name">ServletResponse</span> response<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{<!-- --></span>     <span class="token class-name">HttpServletRequest</span> req <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span><span class="token punctuation">)</span> request<span class="token punctuation">;</span>     <span class="token class-name">HttpServletResponse</span> resp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">HttpServletResponse</span><span class="token punctuation">)</span> response<span class="token punctuation">;</span>     <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span><span class="token function">getMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>OPTIONS<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         resp<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>OK<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>     <span class="token comment">// 前端Ajax请求时requestHeader里面带一些参数，用于判断是否是前端的请求</span>     <span class="token class-name">String</span> ajaxHeader <span class="token operator">=</span> req<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token class-name">CustomSessionManager</span><span class="token punctuation">.</span>AUTHORIZATION<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">StringUtils</span><span class="token punctuation">.</span><span class="token function">isNotBlank</span><span class="token punctuation">(</span>ajaxHeader<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token comment">// 前端Ajax请求，则不会重定向</span>         resp<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Origin"</span><span class="token punctuation">,</span> req<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token string">"Origin"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         resp<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Credentials"</span><span class="token punctuation">,</span> <span class="token string">"true"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         resp<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"application/json; charset=utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         resp<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">PrintWriter</span> out <span class="token operator">=</span> resp<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">String</span> result <span class="token operator">=</span> <span class="token string">"{"</span>MESSAGE<span class="token string">":"</span>角色，权限不足<span class="token string">"}"</span><span class="token punctuation">;</span>         out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>         out<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         out<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>     <span class="token keyword">return</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onAccessDenied</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>shiro配置类配置过滤器</p> <pre><code class="prism language-java"><span class="token comment">//Filter工厂，设置对应的过滤条件和跳转条件</span>     <span class="token annotation punctuation">@Bean</span>     <span class="token keyword">public</span> <span class="token class-name">ShiroFilterFactoryBean</span> <span class="token function">shiroFilterFactoryBean</span><span class="token punctuation">(</span><span class="token class-name">SecurityManager</span> securityManager<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">ShiroFilterFactoryBean</span> shiroFilterFactoryBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShiroFilterFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setSecurityManager</span><span class="token punctuation">(</span>securityManager<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//登出</span>         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"/logout"</span><span class="token punctuation">,</span> <span class="token string">"logout"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//对所有用户认证</span>         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"/**"</span><span class="token punctuation">,</span> <span class="token string">"authc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//登录</span>         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"loginUrl:"</span> <span class="token operator">+</span> loginUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>         shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setLoginUrl</span><span class="token punctuation">(</span>loginUrl<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//        //首页</span> <span class="token comment">//        shiroFilterFactoryBean.setSuccessUrl("/index");</span>         <span class="token comment">//错误页面，认证不通过跳转</span>         shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setUnauthorizedUrl</span><span class="token punctuation">(</span><span class="token string">"/error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setFilterChainDefinitionMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">/* 自定义filter注册 */</span>         <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Filter</span><span class="token punctuation">&gt;</span></span> filters <span class="token operator">=</span> shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">getFilters</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//根据上面列表中的过滤器的名称配置</span>         filters<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"roles"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">MyAuthorizationFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token keyword">return</span> shiroFilterFactoryBean<span class="token punctuation">;</span>     <span class="token punctuation">}</span> </code></pre> <p>注意：过滤器需要根据上面列表中的过滤器的名称配置</p> <h2> <a id="_105" rel="nofollow"></a>权限控制</h2> <p>除了在配置类中配置路径的访问权限之外，还可以使用注解来控制权限 。</p> <p>Shiro注解一共有五个:<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/dc9af3531184048c65eee7cc7b7e768b.jpg" alt="shiro的过滤器和权限控制"></p> <p>一般情况下我们在项目中做权限控制,使用最多的是RequiresPermissions和RequiresRoles,允许存在多个角色和权限,默认逻辑是AND,也就是同时拥有这些才可以访问方法,可以在注解中以参数的形式设置成OR。作用在controller类的方法上。</p> <pre><code class="prism language-java"> 示例     <span class="token comment">//拥有一个角色就可以访问</span>     <span class="token annotation punctuation">@RequiresRoles</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">"ADMIN"</span><span class="token punctuation">,</span><span class="token string">"USER"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>logical <span class="token operator">=</span> <span class="token class-name">Logical</span><span class="token punctuation">.</span>OR<span class="token punctuation">)</span>     <span class="token comment">//拥有所有权限才可以访问</span>     <span class="token annotation punctuation">@RequiresPermissions</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">"sys:user:info"</span><span class="token punctuation">,</span><span class="token string">"sys:role:info"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>logical <span class="token operator">=</span> <span class="token class-name">Logical</span><span class="token punctuation">.</span>AND<span class="token punctuation">)</span> </code></pre> <p>使用顺序:Shiro注解是存在顺序的,当多个注解在一个方法上的时候,会逐个检查,知道全部通过为止,默认拦截顺序是:<br /> RequiresRoles-&gt;RequiresPermissions-&gt;RequiresAuthentication-&gt;RequiresUser-&gt;RequiresGuest</p> <h3> <a id="_122" rel="nofollow"></a>动态配置权限</h3> <p>这里指的是动态配置当前登录用户的权限<br /> 1、登录时查询当前用户的角色、权限</p> <pre><code class="prism language-java"><span class="token comment">/**      * 赋予角色和权限:用户进行权限验证时 Shiro会去缓存中找,如果查不到数据,会执行这个方法去查权限,并放入缓存中      */</span>     <span class="token annotation punctuation">@Override</span>     <span class="token keyword">protected</span> <span class="token class-name">AuthorizationInfo</span> <span class="token function">doGetAuthorizationInfo</span><span class="token punctuation">(</span><span class="token class-name">PrincipalCollection</span> principalCollection<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">SimpleAuthorizationInfo</span> authorizationInfo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleAuthorizationInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// 获取用户</span>         <span class="token class-name">User</span> user <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">User</span><span class="token punctuation">)</span> principalCollection<span class="token punctuation">.</span><span class="token function">getPrimaryPrincipal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">Integer</span> userId <span class="token operator">=</span>user<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// 这里可以进行授权和处理</span>         <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> rolesSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> permsSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// 获取当前用户对应的权限(这里根据业务自行查询)</span>         <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Role</span><span class="token punctuation">&gt;</span></span> roleList <span class="token operator">=</span> roleMapper<span class="token punctuation">.</span><span class="token function">selectRoleByUserId</span><span class="token punctuation">(</span> userId <span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Role</span> role<span class="token operator">:</span>roleList<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             rolesSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span> role<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Menu</span><span class="token punctuation">&gt;</span></span> menuList <span class="token operator">=</span> menuMapper<span class="token punctuation">.</span><span class="token function">selectMenuByRoleId</span><span class="token punctuation">(</span> role<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Menu</span> menu <span class="token operator">:</span>menuList<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>                 permsSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span> menu<span class="token punctuation">.</span><span class="token function">getResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token punctuation">}</span>         <span class="token punctuation">}</span>         <span class="token comment">//将查到的权限和角色分别传入authorizationInfo中</span>         authorizationInfo<span class="token punctuation">.</span><span class="token function">setStringPermissions</span><span class="token punctuation">(</span>permsSet<span class="token punctuation">)</span><span class="token punctuation">;</span>         authorizationInfo<span class="token punctuation">.</span><span class="token function">setRoles</span><span class="token punctuation">(</span>rolesSet<span class="token punctuation">)</span><span class="token punctuation">;</span>         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"--------------- 赋予角色和权限成功！ ---------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> authorizationInfo<span class="token punctuation">;</span>     <span class="token punctuation">}</span> </code></pre> <p>2、当用户权限发生改变时，需要重新退出登陆刷新权限。</p> <p><strong>不需要重新登陆实现权限刷新，参考博客</strong>：https://blog.csdn.net/qq_38225558/article/details/101616759</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-31211.htm">重庆领养宠物在哪领养好一点（重庆哪里领养宠物）</a></p>
+                                        <p>下一个：<a href="/news/article-31733.htm">什么属相不能养猫家里养猫对财运好不好（什么属相不能养猫是真的还是假的）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-29363.htm" title="动物医院需要几个执业兽医师证书（动物医院资质级别有哪些）">动物医院需要几个执业兽医师证书（动物医院资质级别有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-21026.htm" title="js穿梭框；将两个table中的数据选中移动">js穿梭框；将两个table中的数据选中移动</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-clash-verge-rev-node-share.htm" title="11月9日→20.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月9日→20.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27964.htm" title="动物疫苗新规定有哪些品种名称和图片（动物疫苗新法案）">动物疫苗新规定有哪些品种名称和图片（动物疫苗新法案）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-23-clash-verge-rev-github.htm" title="9月23日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址">9月23日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-29838.htm" title="宠物犬领养平台（宠物狗领养平台）">宠物犬领养平台（宠物狗领养平台）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-17-clash-verge-rev-node-github.htm" title="10月17日→19.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月17日→19.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27494.htm" title="不建议养的5种猫（懒人养什么猫最省心）">不建议养的5种猫（懒人养什么猫最省心）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-node-share-links.htm" title="11月17日→19.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月17日→19.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-node-share.htm" title="11月28日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月28日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">80</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
