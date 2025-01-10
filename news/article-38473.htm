@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-38473.htm" />
+    <meta charset="utf-8">
+    <title>vue3.0，setup()的使用，Composition Api(组合式api)data，computed，methods，watch</title>
+        <meta name="description" content="vue3.0项目创建好之后，来看看一个简单组件内的代码顺便介绍几个特点: 1.组合式api就是指把vue2.0中的data，computed，methods，watch都集中在3.0中的setup()" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+                        <a class="logo mr-3" href="/">
+                <span>Clash Verge Github</span>
+            </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="#" class="nav-link">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">联系</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">vue3.0，setup()的使用，Composition Api(组合式api)data，computed，methods，watch</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <h2><a id="vue30_0" rel="nofollow"></a>vue3.0项目创建好之后，来看看一个简单组件内的代码顺便介绍几个特点:</h2> <p>1.组合式api就是指把vue2.0中的<strong>data</strong>，<strong>computed</strong>，<strong>methods</strong>，<strong>watch</strong>都集中在3.0中的setup()中<br /> 2.setup取代<strong>beforeCreate</strong>，<strong>created</strong>这两个周期，也就是原本放在这两个钩子的内容现在放在setup中<br /> 3.在setup里无法再使用<strong>this</strong>，因为在执行setup的时候组件实例还没创建成功(setup执行在<strong>beforeCreate</strong>之前)。<br /> 4.接收两个参数<strong>props</strong>，<strong>context</strong>(具体的后面讲)<br /> 5.代码可读性更高，维护也更方便。当然也完美兼容vue2.x</p> <pre><code class="prism language-bash"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>div<span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">"home"</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>user.name<span class="token punctuation">}</span><span class="token punctuation">}</span>--<span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>user.age<span class="token punctuation">}</span><span class="token punctuation">}</span>--<span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>num<span class="token punctuation">}</span><span class="token punctuation">}</span>--<span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>doubleCount<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"change"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/button<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/div<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token function">import</span><span class="token punctuation">{<!-- --></span> ref, reactive, computed, watch<span class="token punctuation">}</span> from<span class="token string">'vue'</span><span class="token builtin class-name">export</span> default<span class="token punctuation">{<!-- --></span>   name:<span class="token string">'Home'</span>,<span class="token function-name function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>   	const user<span class="token operator">=</span> reactive<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span> name:<span class="token string">'jerry'</span>, age:<span class="token number">18</span><span class="token punctuation">}</span><span class="token punctuation">)</span> // 创建引用类型数据使用reactive   	const num<span class="token operator">=</span> ref<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>	// 创建基础数据类型使用ref,使用是用.vulue 	const doubleCount<span class="token operator">=</span> computed<span class="token punctuation">((</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span><span class="token builtin class-name">return</span> num.value *<span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span>     // watch的单个值写法，第一个参数是一个getter函数，该函数返回一个响应式对象，要响应式。     watch<span class="token punctuation">((</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span> num.value,<span class="token punctuation">(</span>newValue, old<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>     	// newValue新值,old旧值     	console.log<span class="token punctuation">(</span>newValue, old,<span class="token string">'--w'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>     // watch的多个值写法     /* const num1<span class="token operator">=</span> ref<span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span>     watch<span class="token punctuation">(</span><span class="token punctuation">[</span>count, count1<span class="token punctuation">]</span>,<span class="token punctuation">(</span><span class="token punctuation">[</span>newCount, newCount2<span class="token punctuation">]</span>,<span class="token punctuation">[</span>oldCount, oldCount2<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>       console.log<span class="token punctuation">(</span><span class="token punctuation">[</span>newCount, newCount2<span class="token punctuation">]</span>,<span class="token string">'--'</span>,<span class="token punctuation">[</span>oldCount, oldCount2<span class="token punctuation">]</span>,<span class="token string">'--w'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>      watch<span class="token punctuation">((</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span> user,<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>     	console.log<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span><span class="token punctuation">}</span>,<span class="token punctuation">{<!-- --></span> deep:<span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span> // 深入监听user对象内部变化     watch<span class="token punctuation">(</span><span class="token punctuation">[</span>count, count1<span class="token punctuation">]</span>,<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>      	console.log<span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>//<span class="token punctuation">[</span>newCount, newCount2<span class="token punctuation">]</span>       	console.log<span class="token punctuation">(</span>oldValue<span class="token punctuation">)</span>//<span class="token punctuation">[</span>oldCount, oldCount2<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span> */     const change<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>       	num.value++<span class="token punctuation">}</span><span class="token builtin class-name">return</span><span class="token punctuation">{<!-- --></span>     	user,      	num,     	doubleCount，     	change<span class="token punctuation">}</span><span class="token punctuation">}</span>,<span class="token function-name function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>   	// vue2.0的内容也还是可以照常用的<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/script<span class="token operator">&gt;</span></code></pre> <h2><a id="setup_59" rel="nofollow"></a>setup()的两个参数</h2> <pre><code class="prism language-bash"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token function">import</span><span class="token punctuation">{<!-- --></span> toRefs, toRef<span class="token punctuation">}</span> from<span class="token string">'vue'</span><span class="token builtin class-name">export</span> default<span class="token punctuation">{<!-- --></span>   name:<span class="token string">'Home'</span>,   // 因为props是响应性的，使用解构后会消除其响应性，所以需要使用toRefs, toRef   // 但是context不具有响应性，可以直接使用解构赋值，但是只能访问attrs, slots, emit, expose   setup<span class="token punctuation">(</span>props, context<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>     const<span class="token punctuation">{<!-- --></span> name<span class="token punctuation">}</span><span class="token operator">=</span> toRefs<span class="token punctuation">(</span>props<span class="token punctuation">)</span>     const<span class="token punctuation">{<!-- --></span> name0<span class="token punctuation">}</span><span class="token operator">=</span> toRef<span class="token punctuation">(</span>props,<span class="token string">'jerry'</span><span class="token punctuation">)</span> // toRef的第二个参数就类似于函数形参的默认值    	const<span class="token punctuation">{<!-- --></span>attrs, slots, emit, expose<span class="token punctuation">}</span><span class="token operator">=</span> context // 可以打印出来自己去看这几个属性<span class="token builtin class-name">return</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/script<span class="token operator">&gt;</span></code></pre> <p><strong>方便维护，便于理解</strong><br /> 这样看就不会像vue2.0那样，在维护的时候想要查询某个变量的逻辑，要去data，watch，methos等等里面去找，代码一多，眼睛都给你看画，脑壳看痛</p> <pre><code class="prism language-bash"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token function">import</span><span class="token punctuation">{<!-- --></span> ref, reactive<span class="token punctuation">}</span> from<span class="token string">'vue'</span><span class="token builtin class-name">export</span> default<span class="token punctuation">{<!-- --></span>   name:<span class="token string">'Home'</span>,   setup<span class="token punctuation">(</span>props, context<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span> 	const num<span class="token operator">=</span> ref<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> 	/*<span class="token builtin class-name">.</span> 	.这里都是对num的操作代码<span class="token builtin class-name">.</span> 	*/ 	 	const user<span class="token operator">=</span> reactive<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>name:<span class="token string">'jerry'</span><span class="token punctuation">}</span><span class="token punctuation">)</span> 	/*<span class="token builtin class-name">.</span> 	.这里都是对user的操作代码<span class="token builtin class-name">.</span> 	*/<span class="token builtin class-name">return</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/script<span class="token operator">&gt;</span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-37989.htm">动物疫苗有哪些大厂家生产的药名称（国内动物疫苗龙头企业）</a></p>
+                                        <p>下一个：<a href="/news/article-38474.htm">兽用疫苗稀释液是什么成分的（禽用疫苗稀释液）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-27036.htm" title="动物防疫站能给人打狂犬疫苗吗要钱吗知乎（动物防疫站打针免费吗）">动物防疫站能给人打狂犬疫苗吗要钱吗知乎（动物防疫站打针免费吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-today-clash-verge-rev-node.htm" title="1月8日→18.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月8日→18.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-clash-verge-rev-nodes.htm" title="12月3日→21.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月3日→21.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24710.htm" title="动物疫苗的种类及作用（动物疫苗的了解）">动物疫苗的种类及作用（动物疫苗的了解）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-28-clash-verge-rev-windows.htm" title="10月28日→21.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月28日→21.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-clash-verge-rev-github.htm" title="10月24日→19.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月24日→19.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-node-share.htm" title="11月28日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月28日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-clash-verge-rev-nodes.htm" title="12月25日→21.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月25日→21.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-20569.htm" title="SpringBoot线程池参数搜一堆资料还是不会配，我花一天测试换你此生明白。_在线工具">SpringBoot线程池参数搜一堆资料还是不会配，我花一天测试换你此生明白。_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-free-node-subscribe-links.htm" title="12月19日→21.4M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月19日→21.4M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
