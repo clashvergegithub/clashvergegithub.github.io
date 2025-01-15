@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-40947.htm" />
+    <meta charset="utf-8">
+    <title>Appium+Python+Android自动化のdesired_caps会话参数</title>
+        <meta name="description" content="&nbsp;参数详解请见代码： from appium import webdriver from time import sleep  if __name__ == '__main__':     " />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+                        <a class="logo mr-3" href="/">
+                <span>Clash Verge Github</span>
+            </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="#" class="nav-link">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">联系</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">Appium+Python+Android自动化のdesired_caps会话参数</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp;参数详解请见代码：</p> <pre><code class="language-python">from appium import webdriver from time import sleep  if __name__ == '__main__':     desired_caps = {}      # 必填参数：      #platformName：操作系统名（iOS, Android, FirefoxOS）     desired_caps['platformName'] = 'Android'      # deviceName：设备名（值有意义即可）     desired_caps['deviceName'] = 'Android Emulator'      # 指定要操作的APP有两种方式：         # 方式1（APP如果没有安装，自动安装）：     # app：apk的绝对路径     desired_caps['app'] = r"D:\AppPackage\TestApks\ApiDemos-debug.apk"         # 方式2（APP必须预先安装）：     # appPackage：应用的包名。appActivity：应用的任意窗口名。     # 这两参数需要一起指定。     desired_caps['appPackage'] = 'com.android.androidui'     desired_caps['appActivity'] = '.MainActivity'      # 可选参数：      # platformVersion：操作系统版本     # 在设置里查看。6是主版本号，0是次版本号，1是修订号。     desired_caps['platformVersion'] = '6.0.1'     desired_caps['platformVersion'] = '6.0'     desired_caps['platformVersion'] = '6'      # unicodeKeyboard和resetKeyboard：使用中文字符输入。     # 这两参数需要一起指定，值是布尔值。     desired_caps['unicodeKeyboard'] = True     desired_caps['resetKeyboard'] = True      # automationName：指定想使用的自动化测试引擎。     # ①Appium（uiautomator）：不指定的话默认     desired_caps['automationName'] = 'Appium'     # ②Selendroid：支持安卓4.2之前的版本，报错     desired_caps['automationName'] = 'Selendroid'     # ③uiautomator2：支持安卓6.0之后的版本     desired_caps['automationName'] = 'uiautomator2'      # udid：如果连接真机测试，必须指定设备的id（在adb devides里或设置里查看）     desired_caps['udid'] = '7N3HPX159H051514'     # 真机测试需要做的事情:     # ①打开开发者模式和USB调试模式     # ②在电脑上安装手机驱动     # ③用USB连接手机和电脑      driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)      driver.find_element_by_id('android:id/text1').click()      # 启动一个窗口。     # 可以打开本APP的任意窗口，还可以打开其他APP的任意窗口，前提是APP已安装。     driver.start_activity('io.selendroid.testapp','.HomeScreenActivity')      driver.back()      sleep(2)     driver.quit()</code></pre> <p>from appium import webdriver<br /> from time import sleep<br /> &nbsp;<br /> if __name__ == '__main__':<br /> &nbsp;&nbsp;&nbsp; desired_caps = {}<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; # 必填参数：<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; #<span style="color:#f33b45;"><strong>platformName</strong></span>：操作系统名（<span style="color:#86ca5e;"><strong>iOS, Android, FirefoxOS</strong></span>）<br /> &nbsp;&nbsp;&nbsp; desired_caps['platformName'] = 'Android'<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; # <strong><span style="color:#f33b45;">deviceName</span></strong>：设备名（值有意义即可）<br /> &nbsp;&nbsp;&nbsp; desired_caps['deviceName'] = 'Android Emulator'<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; # 指定要操作的APP有两种方式：<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 方式1（APP如果没有安装，自动安装）：<br /> &nbsp;&nbsp;&nbsp; # <strong><span style="color:#f33b45;">app</span></strong>：apk的绝对路径<br /> &nbsp;&nbsp;&nbsp; desired_caps['app'] = r"D:\AppPackage\TestApks\ApiDemos-debug.apk"<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 方式2（APP必须预先安装）：<br /> &nbsp;&nbsp;&nbsp; # <strong><span style="color:#f33b45;">appPackage</span></strong>：应用的包名。<strong><span style="color:#f33b45;">appActivity</span></strong>：应用的任意窗口名。<br /> &nbsp;&nbsp;&nbsp; # 这两参数需要一起指定。<br /> &nbsp;&nbsp;&nbsp; desired_caps['appPackage'] = 'com.android.androidui'<br /> &nbsp;&nbsp;&nbsp; desired_caps['appActivity'] = '.MainActivity'<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; # 可选参数：<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; # <strong><span style="color:#f33b45;">platformVersion</span></strong>：操作系统版本<br /> &nbsp;&nbsp;&nbsp; # 在设置里查看。6是主版本号，0是次版本号，1是修订号。<br /> &nbsp;&nbsp;&nbsp; desired_caps['platformVersion'] = '6.0.1'<br /> &nbsp;&nbsp;&nbsp; desired_caps['platformVersion'] = '6.0'<br /> &nbsp;&nbsp;&nbsp; desired_caps['platformVersion'] = '6'<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; # <strong><span style="color:#f33b45;">unicodeKeyboard</span></strong>和<strong><span style="color:#f33b45;">resetKeyboard</span></strong>：使用中文字符输入。<br /> &nbsp;&nbsp;&nbsp; # 这两参数需要一起指定，值是布尔值。<br /> &nbsp;&nbsp;&nbsp; desired_caps['unicodeKeyboard'] = <span style="color:#86ca5e;"><strong>True</strong></span><br /> &nbsp;&nbsp;&nbsp; desired_caps['resetKeyboard'] = <span style="color:#86ca5e;"><strong>True</strong></span><br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; # <strong><span style="color:#f33b45;">automationName</span></strong>：指定想使用的自动化测试引擎。<br /> &nbsp;&nbsp;&nbsp; # ①<strong><span style="color:#86ca5e;">Appium</span></strong>（uiautomator）：不指定的话默认<br /> &nbsp;&nbsp;&nbsp; desired_caps['automationName'] = 'Appium'<br /> &nbsp;&nbsp;&nbsp; # ②<strong><span style="color:#86ca5e;">Selendroid</span></strong>：支持安卓4.2之前的版本，报错<br /> &nbsp;&nbsp;&nbsp; desired_caps['automationName'] = 'Selendroid'<br /> &nbsp;&nbsp;&nbsp; # ③<strong><span style="color:#86ca5e;">uiautomator2</span></strong>：支持安卓6.0之后的版本<br /> &nbsp;&nbsp;&nbsp; desired_caps['automationName'] = 'uiautomator2'<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; # <strong><span style="color:#f33b45;">udid</span></strong>：如果连接真机测试，必须指定设备的id（在adb devides里或设置里查看）<br /> &nbsp;&nbsp;&nbsp; desired_caps['udid'] = '7N3HPX159H051514'<br /> &nbsp;&nbsp;&nbsp; # 真机测试需要做的事情:<br /> &nbsp;&nbsp;&nbsp; # ①打开开发者模式和USB调试模式<br /> &nbsp;&nbsp;&nbsp; # ②在电脑上安装手机驱动<br /> &nbsp;&nbsp;&nbsp; # ③用USB连接手机和电脑<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; driver.find_element_by_id('android:id/text1').click()<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; # 启动一个窗口。<br /> &nbsp;&nbsp;&nbsp; # 可以打开本APP的任意窗口，还可以打开其他APP的任意窗口，前提是APP已安装。<br /> &nbsp;&nbsp;&nbsp; driver.start_activity('io.selendroid.testapp','.HomeScreenActivity')<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; driver.back()<br /> &nbsp;<br /> &nbsp;&nbsp;&nbsp; sleep(2)<br /> &nbsp;&nbsp;&nbsp; driver.quit()</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-40452.htm">动物疫苗注射的作用有哪些呢 动物疫苗注射的作用有哪些呢视频</a></p>
+                                        <p>下一个：<a href="/news/article-40948.htm">宠物领养证办理需要什么条件呢（宠物领养证办理需要什么条件呢图片）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-node-subscribe-links.htm" title="11月12日→19.1M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月12日→19.1M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-clash-verge-rev-node.htm" title="12月27日→20.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月27日→20.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-30314.htm" title="猫粮生产工艺有哪几种 猫粮生产工艺有哪几种类型">猫粮生产工艺有哪几种 猫粮生产工艺有哪几种类型</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-1-free-clash-verge-rev-node.htm" title="12月1日→21.4M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月1日→21.4M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-node-share.htm" title="1月2日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月2日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-clash-verge-rev-node.htm" title="1月12日→20.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月12日→20.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-37988.htm" title="私下签订的宠物领养协议有效吗（私下签订的宠物领养协议有效吗合法吗）">私下签订的宠物领养协议有效吗（私下签订的宠物领养协议有效吗合法吗）</a></li>
+                        <li class="py-2"><a href="/news/article-34592.htm" title="宠物粮网店的利润怎么样啊（宠物粮网店的利润怎么样啊多少）">宠物粮网店的利润怎么样啊（宠物粮网店的利润怎么样啊多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-free-node-subscribe-links.htm" title="12月19日→21.4M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月19日→21.4M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27965.htm" title="被猫抓伤出血了需要打针吗（被猫抓伤出血了需要打针吗要打多久）">被猫抓伤出血了需要打针吗（被猫抓伤出血了需要打针吗要打多久）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
