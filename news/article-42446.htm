@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-42446.htm" />
+    <meta charset="utf-8">
+    <title>设置网页脚本动态顺序加载</title>
+        <meta name="description" content="介绍   最近为了提升页面加载速度，寻找了一下解决方案，其中方案之一就是让页面脚本动态顺序加载，以下介绍该方案的原理以及实现。   众所周知，浏览器加载 JavaScript 脚本，主要通过&lt;s" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-42446.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="设置网页脚本动态顺序加载" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/3aae8218583547276d690dea2c77299e.webp" />
+        <meta property="og:release_date" content="2025-01-18T07:14:55" />
+    <meta property="og:updated_time" content="2025-01-18T07:14:55" />
+        <meta property="og:description" content="介绍   最近为了提升页面加载速度，寻找了一下解决方案，其中方案之一就是让页面脚本动态顺序加载，以下介绍该方案的原理以及实现。   众所周知，浏览器加载 JavaScript 脚本，主要通过&lt;s" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+                        <a class="logo mr-3" href="/">
+                <span>Clash Verge Github</span>
+            </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="#" class="nav-link">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">联系</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">设置网页脚本动态顺序加载</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <h3><a id="_0" rel="nofollow"></a>介绍</h3> <p>  最近为了提升页面加载速度，寻找了一下解决方案，其中方案之一就是让页面脚本动态顺序加载，以下介绍该方案的原理以及实现。<br />   众所周知，浏览器加载 JavaScript 脚本，主要通过<code>&lt;script&gt;</code>元素完成。正常的网页加载流程是这样的。浏览器加载网页的流程一般如下：</p> <ol> <li>浏览器一边下载 HTML 网页，一边开始解析。也就是说，不等到下载完，就开始解析。</li> <li>解析过程中，浏览器发现<code>&lt;script&gt;</code>元素，就暂停解析，把网页渲染的控制权转交给 JavaScript 引擎。</li> <li>如果<code>&lt;script&gt;</code>元素引用了外部脚本，就下载该脚本再执行，否则就直接执行代码。</li> <li>JavaScript 引擎执行完毕，控制权交还渲染引擎，恢复往下解析 HTML 网页。</li> </ol> <p>  加载外部脚本时，浏览器会暂停页面渲染，等待脚本下载并执行完成后，再继续渲染。原因是 JavaScript 代码可以修改 DOM，所以必须把控制权让给它，否则会导致复杂的线程竞赛的问题。<br />   如果我们可以让外部脚本动态加载，自然提高了页面加载速度；</p> <h3><a id="_11" rel="nofollow"></a>脚本的动态加载</h3> <p>  通过动态生成<code>&lt;script&gt;</code>元素，生成后再插入到页面当中，可实现脚本的动态加载。比如页面需要动态加载a.js和b.js；代码如下：</p> <pre><code class="prism language-javascript"><span class="token punctuation">[</span><span class="token string">'a.js'</span><span class="token punctuation">,</span><span class="token string">'b.js'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> script<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   script<span class="token punctuation">.</span>src<span class="token operator">=</span> src<span class="token punctuation">;</span>   document<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <p>  以上方法动态生成的script标签不会阻塞页面渲染，不会造成浏览器假死。但若多个脚本之间约定需要顺序执行；这种方法无法保证脚本的执行顺序，哪个脚本文件先下载完成，就先执行哪个。以下给出动态顺序加载解决方案；</p> <h3><a id="_24" rel="nofollow"></a>脚本的动态顺序加载</h3> <p>  如果多个脚本之间有执行顺序，可以设置async属性为false。代码如下：</p> <pre><code class="prism language-typescript"><span class="token punctuation">[</span><span class="token string">'a.js'</span><span class="token punctuation">,</span><span class="token string">'b.js'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> script<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   script<span class="token punctuation">.</span>src<span class="token operator">=</span> src<span class="token punctuation">;</span>   script<span class="token punctuation">.</span><span class="token keyword">async</span><span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>   document<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <p>  上面的代码不会阻塞页面渲染，而且可以保证b.js在a.js后面执行。不过需要注意的是，在这段代码后面加载的脚本，会因此都等待b.js执行完成后再执行。若想将脚本文件放最后执行，则可将这部分代码放在脚本最后。<br />   其次，若想为动态加载的脚本指定回调函数，可以借助<code>onload</code>方法；写法如下：</p> <pre><code class="prism language-typescript"><span class="token keyword">function</span><span class="token function">loadScript</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span> done<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> js<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   js<span class="token punctuation">.</span>src<span class="token operator">=</span> src<span class="token punctuation">;</span>   js<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//回调函数</span><span class="token punctuation">}</span><span class="token punctuation">;</span>   js<span class="token punctuation">.</span><span class="token function-variable function">onerror</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token function">done</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Failed to load script '</span><span class="token operator">+</span> src<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>   document<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>js<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <blockquote> <p>参考网址：<br /> https://www.wangdoc.com/javascript/bom/engine.html#%E6%B8%B2%E6%9F%93%E5%BC%95%E6%93%8E</p> </blockquote> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-41947.htm">今年公务员国考人数（今年国考人数多少）</a></p>
+                                        <p>下一个：<a href="/news/article-42447.htm">在我所在的城市有一家宠物医院用英语怎么说写（在我所在的城市有一家宠物医院英文）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-clash-verge-rev-node-github.htm" title="10月15日→19.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月15日→19.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-2-latest-clash-verge-rev-node.htm" title="11月2日→22M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月2日→22M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21936.htm" title="字符串连接的Java程序。">字符串连接的Java程序。</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-today-clash-verge-rev-node.htm" title="12月26日→22.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月26日→22.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-clash-verge-rev-node-share.htm" title="11月19日→20.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月19日→20.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36517.htm" title="Android 弹窗设计规范">Android 弹窗设计规范</a></li>
+                        <li class="py-2"><a href="/news/article-33163.htm" title="猫咪三针疫苗打完多久可以绝育手术啊（猫咪三针疫苗打完还要打针什么）">猫咪三针疫苗打完多久可以绝育手术啊（猫咪三针疫苗打完还要打针什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-11-latest-clash-verge-rev-node.htm" title="10月11日→21.6M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月11日→21.6M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-37004.htm" title="动物疫苗龙头企业名单公示 动物疫苗龙头企业名单公示最新">动物疫苗龙头企业名单公示 动物疫苗龙头企业名单公示最新</a></li>
+                        <li class="py-2"><a href="/news/article-35153.htm" title="动物疫苗研制流程图（动物疫苗生产工艺流程图）">动物疫苗研制流程图（动物疫苗生产工艺流程图）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
