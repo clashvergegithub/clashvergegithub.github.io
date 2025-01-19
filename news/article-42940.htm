@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-42940.htm" />
+    <meta charset="utf-8">
+    <title>Java实现带缓冲的输入输出流_java</title>
+        <meta name="description" content="缓冲是 I/O 的一种性能优化。缓冲流为 I/O 流增加了内存缓冲区。 BufferedInputStream类 与 BufferedOutputStream类 BufferedInputStream" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-42940.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="Java实现带缓冲的输入输出流_java" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/e8588ae9e049da903952edbfa4c8936f.webp" />
+        <meta property="og:release_date" content="2025-01-19T07:10:17" />
+    <meta property="og:updated_time" content="2025-01-19T07:10:17" />
+        <meta property="og:description" content="缓冲是 I/O 的一种性能优化。缓冲流为 I/O 流增加了内存缓冲区。 BufferedInputStream类 与 BufferedOutputStream类 BufferedInputStream" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+                        <a class="logo mr-3" href="/">
+                <span>Clash Verge Github</span>
+            </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="#" class="nav-link">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">联系</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">Java实现带缓冲的输入输出流_java</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<p>缓冲是 I/O 的一种性能优化。缓冲流为 I/O 流增加了内存缓冲区。</p> <h2>BufferedInputStream类 与 BufferedOutputStream类</h2> <p>BufferedInputStream类 可以对所有InputStream的子类进行缓冲区的包装，以达到性能的优化。</p> <p>BufferedOutputStream类 中的 flush()方法 被用来把缓冲区的字节写入到文件中，并清空缓存。</p> <h3>BufferedInputStream类的构造方法：</h3> <table> <tbody> <tr> <th>构造方法</th> <th>介绍</th> </tr> <tr> <td>BufferedInputStream(FileInputStream fileInputStream);</td> <td>创建一个带有32个字节的缓冲输入流。</td> </tr> <tr> <td>BufferedInputStream(FileInputStream fileInputStream , int size);</td> <td>按指定的大小来创建缓冲输入流。</td> </tr> </tbody> </table> <h3>BufferedOutputStream类的构造方法：</h3> <table> <tbody> <tr> <th>构造方法</th> <th>介绍</th> </tr> <tr> <td>BufferedOutputStream(FileOutputStream fileOutputStream);</td> <td>创建一个带有32个字节的缓冲输出流。</td> </tr> <tr> <td>BufferedOutputStream(FileOutputStream fileOutputStream , int size);</td> <td>按指定的大小来创建缓冲输出流。</td> </tr> </tbody> </table> <h3>BufferedInputStream类 与 BufferedOutputStream类 实例：</h3> <div class="ay1code"> <pre class="brush:java;">import java.io.*;     public class Demo4 {      public static void main(String[] args) {          /**           * 缓冲字节输入流（BufferedInputStream）           * 特点：提高效率           */          File file = new File("C:\\JAVA_API_1.7中文.chm");          BufferedInputStream bufferedInputStream = null;//创建缓冲字节流          FileInputStream fileInputStream = null;          long stare = System.currentTimeMillis();//获得当前流开始时的毫秒值          try {              fileInputStream=new FileInputStream(file);              bufferedInputStream = new BufferedInputStream(fileInputStream);//将文件字节流包装成缓冲字节流              byte by[] = new byte[1024];//缓冲区字节数组（这个缓冲区与Buffered不同）              while ((bufferedInputStream.read(by))!=-1){//使用缓冲字节流读取数据                 }              long end = System.currentTimeMillis();//获得当前流结束时的毫秒值              System.out.println("运行经历的毫秒数："+(end - stare));             } catch (FileNotFoundException e) {              e.printStackTrace();          } catch (IOException e) {              e.printStackTrace();          } finally {              if (fileInputStream!=null){                  try {                      fileInputStream.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }              if (bufferedInputStream!=null){                  try {                      bufferedInputStream.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }          }                              /**           * 缓冲字节输出流（BufferedOutputStream）           * 特点：提高效率           */          File file1 = new File("C:\\Word.txt");          BufferedOutputStream bufferedOutputStream = null;//创建缓冲字节输出流          FileOutputStream fileOutputStream = null;          try {              fileOutputStream=new FileOutputStream(file1);              bufferedOutputStream=new BufferedOutputStream(fileOutputStream);//将文件输出流包装到缓冲字节输出流                 String str = "深山踏红叶，耳畔闻鹭鸣。";              byte by[] = str.getBytes();              bufferedOutputStream.write(by);              //&lt;*&gt; 使用缓冲字节输出流时，要多进行刷新操作，避免等待，有数据时就将数据写入文件当中 &lt;*&gt;              bufferedOutputStream.flush();//刷新（强制将缓冲区数据写入文件中，即使缓冲区没有写满）             } catch (FileNotFoundException e) {              e.printStackTrace();          } catch (IOException e) {              e.printStackTrace();          } finally {              if (fileOutputStream!=null){                  try {                      fileOutputStream.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }              if (bufferedOutputStream!=null){                  try {                      bufferedOutputStream.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }          }      }  }</pre> </div> <h2>BufferedReader类 与 BufferedWriter类</h2> <p>BufferedReader类 与 BufferedWriter类 分别继承了 Reader类 与 Writer类，这两个类同样具有内部缓冲机制，并以行为单位输入/输出。</p> <h3>BufferedReader类常用方法：</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220419/ef29b2728ecc7f0d3a972b06667d7322.jpg"></p> <h3>BufferedWriter类常用方法：</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220419/288963d53b2dba39980fe2a9cdfb316e.jpg"></p> <h3>BufferedReader类 与 BufferedWriter类 实例：</h3> <div class="ay1code"> <pre class="brush:java;">import java.io.*;     public class Demo6 {      public static void main(String[] args) {          File file = new File("C:\\Word.txt");             /**           * 文件缓冲字符输出流（BufferedWriter）           */          FileWriter fileWriter = null;//创建文件字符输出流          BufferedWriter bufferedWriter = null;//创建文件缓冲字符输出流             try {              fileWriter = new FileWriter(file);              bufferedWriter = new BufferedWriter(fileWriter);//将文件字符输出流包装成文件缓冲字符输出流                 String str1 = "神里";              String str2 = "绫华";                 bufferedWriter.write(str1);//第一行数据              bufferedWriter.newLine();//创建一个新行              bufferedWriter.write(str2);//第二行数据             } catch (IOException e) {              e.printStackTrace();          }finally {//&lt;*&gt; 注意：流的关闭顺序，先创建的后关闭。 &lt;*&gt;              if (bufferedWriter!=null){                  try {                      bufferedWriter.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }              if (fileWriter!=null){                  try {                      fileWriter.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }          }                /**           * 文件缓冲字符输入流（BufferedReader）           */          FileReader fileReader = null;          BufferedReader bufferedReader = null;          try {              fileReader = new FileReader(file);              bufferedReader = new BufferedReader(fileReader);//将文件字符输入流包装成文件缓冲字符输入流              String tmp = null;//临时变量              int i = 1;//计数器              while ((tmp = bufferedReader.readLine())!=null){//循环读取文件中的内容                  System.out.println("第"+i+"行："+tmp);                  i++;              }          } catch (FileNotFoundException e) {              e.printStackTrace();          } catch (IOException e) {              e.printStackTrace();          } finally {              if (bufferedReader!=null){                  try {                      bufferedReader.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }              if (fileReader!=null){                  try {                      fileReader.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }          }      }  }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-42939.htm">vue中动态改变样式</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-21026.htm" title="js穿梭框；将两个table中的数据选中移动">js穿梭框；将两个table中的数据选中移动</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-20-node-share.htm" title="12月20日→18M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月20日→18M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-clash-verge-rev-node.htm" title="11月5日→19.8M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月5日→19.8M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-free-node-subscribe.htm" title="11月30日→19.6M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月30日→19.6M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-clash-verge-rev-node-github.htm" title="10月18日→21.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月18日→21.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-today-clash-verge-rev-node.htm" title="12月26日→22.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月26日→22.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26569.htm" title="动物疫苗和人体疫苗生产有什么区别呢英语 动物疫苗和人体疫苗生产有什么区别呢英语翻译">动物疫苗和人体疫苗生产有什么区别呢英语 动物疫苗和人体疫苗生产有什么区别呢英语翻译</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-clash-verge-rev-node.htm" title="12月7日→20M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月7日→20M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-high-speed-nodes.htm" title="11月24日→20.4M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月24日→20.4M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-clash-verge-rev-node-github.htm" title="12月22日→19.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月22日→19.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
