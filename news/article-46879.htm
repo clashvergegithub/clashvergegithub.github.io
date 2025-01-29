@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-46879.htm" />
+    <meta charset="utf-8">
+    <title>【mq】从零开始实现 mq-01-生产者、消费者启动</title>
+        <meta name="description" content="MQ（Message Queue）消息队列，是基础数据结构中“先进先出”的一种数据结构。 指把要传输的数据（消息）放在队列中，用队列机制来实现消息传递——生产者产生消息并把消息放入队列，然后由消费者去" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-46879.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="【mq】从零开始实现 mq-01-生产者、消费者启动" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/d448cf24b24ff4a5ab43142dbbc76c4e.webp" />
+        <meta property="og:release_date" content="2025-01-27T08:18:17" />
+    <meta property="og:updated_time" content="2025-01-27T08:18:17" />
+        <meta property="og:description" content="MQ（Message Queue）消息队列，是基础数据结构中“先进先出”的一种数据结构。 指把要传输的数据（消息）放在队列中，用队列机制来实现消息传递——生产者产生消息并把消息放入队列，然后由消费者去" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="【mq】从零开始实现 mq-01-生产者、消费者启动">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+                        <a class="logo mr-3" href="/">
+                <span>Clash Verge Github</span>
+            </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="#" class="nav-link">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">联系</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">【mq】从零开始实现 mq-01-生产者、消费者启动</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				</h1> <p>MQ（Message Queue）消息队列，是基础数据结构中“先进先出”的一种数据结构。</p> <p>指把要传输的数据（消息）放在队列中，用队列机制来实现消息传递——生产者产生消息并把消息放入队列，然后由消费者去处理。</p> <p>消费者可以到指定队列拉取消息，或者订阅相应的队列，由MQ服务端给其推送消息。</p> <h2 id="mq-的作用">MQ 的作用？</h2> <p>消息队列中间件是分布式系统中重要的组件，主要解决应用解耦，异步消息，流量削锋等问题，实现高性能，高可用，可伸缩和最终一致性架构。</p> <p>解耦：一个业务需要多个模块共同实现，或者一条消息有多个系统需要对应处理，只需要主业务完成以后，发送一条MQ，其余模块消费MQ消息，即可实现业务，降低模块之间的耦合。</p> <p>异步：主业务执行结束后从属业务通过MQ，异步执行，减低业务的响应时间，提高用户体验。</p> <p>削峰：高并发情况下，业务异步处理，提供高峰期业务处理能力，避免系统瘫痪。</p> <p>ps: 以上内容摘选自百科。</p> </h1> <h2 id="maven-引入">maven 引入</h2> <pre><code class="language-xml">&lt;dependency&gt;     &lt;groupId&gt;io.netty&lt;/groupId&gt;     &lt;artifactId&gt;netty-all&lt;/artifactId&gt;     &lt;version&gt;4.1.42.Final&lt;/version&gt; &lt;/dependency&gt;  &lt;dependency&gt;     &lt;groupId&gt;com.alibaba&lt;/groupId&gt;     &lt;artifactId&gt;fastjson&lt;/artifactId&gt;     &lt;version&gt;1.2.76&lt;/version&gt; &lt;/dependency&gt;</code></pre> <h2 id="模块划分">模块划分</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/houbb/mq"  target="_blank" rel="nofollow">The message queue in java.</a> 作为 mq 的从零开始的学习项目，目前已开源。</p> <p>项目的模块如下：</p> <table> <thead> <tr> <th style="text-align: left">模块</th> <th style="text-align: left">说明</th> </tr> </thead> <tbody> <tr> <td style="text-align: left">mq-common</td> <td style="text-align: left">公共代码</td> </tr> <tr> <td style="text-align: left">mq-broker</td> <td style="text-align: left">注册中心</td> </tr> <tr> <td style="text-align: left">mq-producer</td> <td style="text-align: left">消息生产者</td> </tr> <tr> <td style="text-align: left">mq-consumer</td> <td style="text-align: left">消息消费者</td> </tr> </tbody> </table> </h1> <h2 id="接口定义">接口定义</h2> <pre><code class="language-java">package com.github.houbb.mq.consumer.api;  /**  * @author binbin.hou  * @since 1.0.0  */ public interface IMqConsumer {      /**      * 订阅      * @param topicName topic 名称      * @param tagRegex 标签正则      */     void subscribe(String topicName, String tagRegex);      /**      * 注册监听器      * @param listener 监听器      */     void registerListener(final IMqConsumerListener listener);  }</code></pre> <p><code>IMqConsumerListener</code> 作为消息监听类的接口，定义如下：</p> <pre><code class="language-java">public interface IMqConsumerListener {       /**      * 消费      * @param mqMessage 消息体      * @param context 上下文      * @return 结果      */     ConsumerStatus consumer(final MqMessage mqMessage,                             final IMqConsumerListenerContext context);  }</code></pre> <p>ConsumerStatus 代表消息消费的几种状态。</p> <h2 id="消息体">消息体</h2> <p>启动消息体 MqMessage 定义如下：</p> <pre><code class="language-java">package com.github.houbb.mq.common.dto;  import java.util.Arrays; import java.util.List;  /**  * @author binbin.hou  * @since 1.0.0  */ public class MqMessage {      /**      * 标题名称      */     private String topic;      /**      * 标签      */     private List&lt;String&gt; tags;      /**      * 内容      */     private byte[] payload;      /**      * 业务标识      */     private String bizKey;      /**      * 负载分片标识      */     private String shardingKey;      // getter&amp;setter&amp;toString  }</code></pre> <h2 id="push-消费者策略实现">push 消费者策略实现</h2> <p>消费者启动的实现如下：</p> <pre><code class="language-java">/**  * 推送消费策略  *  * @author binbin.hou  * @since 1.0.0  */ public class MqConsumerPush extends Thread implements IMqConsumer  {      // 省略...      @Override     public void run() {         // 启动服务端         log.info("MQ 消费者开始启动服务端 groupName: {}, port: {}, brokerAddress: {}",                 groupName, port, brokerAddress);          EventLoopGroup bossGroup = new NioEventLoopGroup();         EventLoopGroup workerGroup = new NioEventLoopGroup();          try {             ServerBootstrap serverBootstrap = new ServerBootstrap();             serverBootstrap.group(workerGroup, bossGroup)                     .channel(NioServerSocketChannel.class)                     .childHandler(new ChannelInitializer&lt;Channel&gt;() {                         @Override                         protected void initChannel(Channel ch) throws Exception {                             ch.pipeline().addLast(new MqConsumerHandler());                         }                     })                     // 这个参数影响的是还没有被accept 取出的连接                     .option(ChannelOption.SO_BACKLOG, 128)                     // 这个参数只是过一段时间内客户端没有响应，服务端会发送一个 ack 包，以判断客户端是否还活着。                     .childOption(ChannelOption.SO_KEEPALIVE, true);              // 绑定端口，开始接收进来的链接             ChannelFuture channelFuture = serverBootstrap.bind(port).syncUninterruptibly();             log.info("MQ 消费者启动完成，监听【" + port + "】端口");              channelFuture.channel().closeFuture().syncUninterruptibly();             log.info("MQ 消费者关闭完成");         } catch (Exception e) {             log.error("MQ 消费者启动异常", e);             throw new MqException(ConsumerRespCode.RPC_INIT_FAILED);         } finally {             workerGroup.shutdownGracefully();             bossGroup.shutdownGracefully();         }       }       // 省略...  }</code></pre> <p>ps: 初期我们把 consumer 作为服务端，后续引入 broker 则只有 broker 是服务端。</p> <h2 id="mqconsumerhandler-处理类">MqConsumerHandler 处理类</h2> <p>这个类是一个空的实现。</p> <pre><code class="language-java">public class MqConsumerHandler extends SimpleChannelInboundHandler {      @Override     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object object) throws Exception {         //nothing     }  }</code></pre> <h2 id="测试代码">测试代码</h2> <pre><code class="language-java">MqConsumerPush mqConsumerPush = new MqConsumerPush(); mqConsumerPush.start();</code></pre> <p>启动日志：</p> <pre><code>[DEBUG] [2022-04-21 19:16:41.343] [main] [c.g.h.l.i.c.LogFactory.setImplementation] - Logging initialized using 'class com.github.houbb.log.integration.adaptors.stdout.StdOutExImpl' adapter. [INFO] [2022-04-21 19:16:41.356] [Thread-0] [c.g.h.m.c.c.MqConsumerPush.run] - MQ 消费者开始启动服务端 groupName: C_DEFAULT_GROUP_NAME, port: 9527, brokerAddress:  [INFO] [2022-04-21 19:16:43.196] [Thread-0] [c.g.h.m.c.c.MqConsumerPush.run] - MQ 消费者启动完成，监听【9527】端口</code></pre> </h1> <h2 id="接口定义-1">接口定义</h2> <p>最基本的消息发送接口。</p> <pre><code class="language-java">package com.github.houbb.mq.producer.api;  import com.github.houbb.mq.common.dto.MqMessage; import com.github.houbb.mq.producer.dto.SendResult;  /**  * @author binbin.hou  * @since 1.0.0  */ public interface IMqProducer {      /**      * 同步发送消息      * @param mqMessage 消息类型      * @return 结果      */     SendResult send(final MqMessage mqMessage);      /**      * 单向发送消息      * @param mqMessage 消息类型      * @return 结果      */     SendResult sendOneWay(final MqMessage mqMessage);  }</code></pre> <h2 id="生产者实现">生产者实现</h2> <p>MqProducer 启动的实现如下，基于 netty。</p> <pre><code class="language-java">package com.github.houbb.mq.producer.core;  /**  * 默认 mq 生产者  * @author binbin.hou  * @since 1.0.0  */ public class MqProducer extends Thread implements IMqProducer {      //省略...      @Override     public void run() {         // 启动服务端         log.info("MQ 生产者开始启动客户端 GROUP: {}, PORT: {}, brokerAddress: {}",                 groupName, port, brokerAddress);          EventLoopGroup workerGroup = new NioEventLoopGroup();          try {             Bootstrap bootstrap = new Bootstrap();             ChannelFuture channelFuture = bootstrap.group(workerGroup)                     .channel(NioSocketChannel.class)                     .option(ChannelOption.SO_KEEPALIVE, true)                     .handler(new ChannelInitializer&lt;Channel&gt;(){                         @Override                         protected void initChannel(Channel ch) throws Exception {                             ch.pipeline()                                     .addLast(new LoggingHandler(LogLevel.INFO))                                     .addLast(new MqProducerHandler());                         }                     })                     .connect("localhost", port)                     .syncUninterruptibly();              log.info("MQ 生产者启动客户端完成，监听端口：" + port);             channelFuture.channel().closeFuture().syncUninterruptibly();             log.info("MQ 生产者开始客户端已关闭");         } catch (Exception e) {             log.error("MQ 生产者启动遇到异常", e);             throw new MqException(ProducerRespCode.RPC_INIT_FAILED);         } finally {             workerGroup.shutdownGracefully();         }     }      //省略... }</code></pre> <h2 id="mqproducerhandler-处理类">MqProducerHandler 处理类</h2> <p>默认的空实现，什么都不做。</p> <pre><code class="language-java">package com.github.houbb.mq.producer.handler;  import io.netty.channel.ChannelHandlerContext; import io.netty.channel.SimpleChannelInboundHandler;  /**  * @author binbin.hou  * @since 1.0.0  */ public class MqProducerHandler extends SimpleChannelInboundHandler {      @Override     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object object) throws Exception {         //do nothing now     }  }</code></pre> <h2 id="启动代码">启动代码</h2> <pre><code class="language-java">MqProducer mqProducer = new MqProducer(); mqProducer.start();</code></pre> <p>启动日志：</p> <pre><code>[DEBUG] [2022-04-21 19:17:11.960] [main] [c.g.h.l.i.c.LogFactory.setImplementation] - Logging initialized using 'class com.github.houbb.log.integration.adaptors.stdout.StdOutExImpl' adapter. [INFO] [2022-04-21 19:17:11.974] [Thread-0] [c.g.h.m.p.c.MqProducer.run] - MQ 生产者开始启动客户端 GROUP: P_DEFAULT_GROUP_NAME, PORT: 9527, brokerAddress:  四月 21, 2022 7:17:13 下午 io.netty.handler.logging.LoggingHandler channelRegistered 信息: [id: 0x5cb48145] REGISTERED 四月 21, 2022 7:17:13 下午 io.netty.handler.logging.LoggingHandler connect 信息: [id: 0x5cb48145] CONNECT: localhost/127.0.0.1:9527 四月 21, 2022 7:17:13 下午 io.netty.handler.logging.LoggingHandler channelActive 信息: [id: 0x5cb48145, L:/127.0.0.1:57740 - R:localhost/127.0.0.1:9527] ACTIVE [INFO] [2022-04-21 19:17:13.833] [Thread-0] [c.g.h.m.p.c.MqProducer.run] - MQ 生产者启动客户端完成，监听端口：9527</code></pre> </h1> <p>基于 netty 最基本的服务端启动、客户端启动到这里就结束了。</p> <p>千里之行，始于足下。</p> <p>我们下一节将和大家一起学习，如何实现客户端与服务端之间的交互。</p> <p>希望本文对你有所帮助，如果喜欢，欢迎点赞收藏转发一波。</p> <p>我是老马，期待与你的下次重逢。</p> </h1> <blockquote> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/houbb/mq"  target="_blank" rel="nofollow">The message queue in java.(java 简易版本 mq 实现)</a>:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/houbb/mq"  target="_blank" rel="nofollow">https://github.com/houbb/mq</a></p> </blockquote> </h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/houbb/rpc"  target="_blank" rel="nofollow">rpc-从零开始实现 rpc</a>:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/houbb/rpc"  target="_blank" rel="nofollow">https://github.com/houbb/rpc</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://mp.weixin.qq.com/s/moF528JiVG9dqCi5oFMbVg"  target="_blank" rel="nofollow">【mq】从零开始实现 mq-01-生产者、消费者启动</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-46408.htm">动物注射疫苗的流程是什么（动物疫苗接种方法有哪些）</a></p>
+                                        <p>下一个：<a href="/news/article-46880.htm">同城领养猫咪平台重庆有几家店铺（同城领养猫咪平台重庆有几家店铺呢）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-37491.htm" title="被猫咬了没出血怎么办?（被猫咬了没出血怎么办有什么症状）">被猫咬了没出血怎么办?（被猫咬了没出血怎么办有什么症状）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-clash-verge-rev-node-share.htm" title="1月4日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月4日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-clash-verge-rev-node-share.htm" title="1月6日→18.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月6日→18.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-today-clash-verge-rev-node.htm" title="12月21日→20.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月21日→20.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21490.htm" title="深度学习Pytorch——神经网络">深度学习Pytorch——神经网络</a></li>
+                        <li class="py-2"><a href="/news/article-20570.htm" title="养猫要打什么针吗（养猫需要给他打什么针）">养猫要打什么针吗（养猫需要给他打什么针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-clash-verge-rev-windows.htm" title="10月22日→18.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月22日→18.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-today-clash-verge-rev-node.htm" title="11月22日→18.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月22日→18.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-high-speed-nodes.htm" title="10月30日→22.6M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月30日→22.6M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33163.htm" title="猫咪三针疫苗打完多久可以绝育手术啊（猫咪三针疫苗打完还要打针什么）">猫咪三针疫苗打完多久可以绝育手术啊（猫咪三针疫苗打完还要打针什么）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
