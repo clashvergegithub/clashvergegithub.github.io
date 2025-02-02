@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-49368.htm" />
+    <meta charset="utf-8">
+    <title>windows 平台下编译openssl 最新版本-3.0.5</title>
+        <meta name="description" content="根据openssl 官方仓库的描述，他们不提供二进制版本的文件，需要我们自己针对不同的平台打包 环境配置 安装好以下软件，并配置好环境变量  Perl Nasm namke.exe cl.exe 最后" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-49368.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="windows 平台下编译openssl 最新版本-3.0.5" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/f387c46fc08ec789a8d198e601ebc0b4.webp" />
+        <meta property="og:release_date" content="2025-02-01T07:13:35" />
+    <meta property="og:updated_time" content="2025-02-01T07:13:35" />
+        <meta property="og:description" content="根据openssl 官方仓库的描述，他们不提供二进制版本的文件，需要我们自己针对不同的平台打包 环境配置 安装好以下软件，并配置好环境变量  Perl Nasm namke.exe cl.exe 最后" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="windows 平台下编译openssl 最新版本-3.0.5">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+                        <a class="logo mr-3" href="/">
+                <span>Clash Verge Github</span>
+            </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="#" class="nav-link">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">联系</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">windows 平台下编译openssl 最新版本-3.0.5</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> <p>根据openssl 官方仓库的描述，他们不提供二进制版本的文件，需要我们自己针对不同的平台打包<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/90e71297977a82f7941e0e3ee6993e92.jpg" alt="windows 平台下编译openssl 最新版本-3.0.5"></p> <h2><a id="_5" rel="nofollow"></a>环境配置</h2> <p>安装好以下软件，并配置好环境变量</p> <ol> <li>Perl</li> <li>Nasm</li> <li>namke.exe</li> <li>cl.exe<br /> 最后两个可以通过安装好vs2022 ，自动可以使用</li> </ol> <h2><a id="_15" rel="nofollow"></a>开始编译</h2> <h3><a id="configure_16" rel="nofollow"></a>configure</h3> <p>根据自己的目标平台类型，选择一项进行编译，一半选择第一个即可</p> <pre><code class="prism language-bash"> - perl Configure VC-WIN32     - perl Configure VC-WIN64A      - perl Configure VC-WIN64-ARM</code></pre> <h3><a id="_25" rel="nofollow"></a>编译源码</h3> <pre><code class="prism language-bash">nmake</code></pre> <p>通过搜索调用nmake 命令行工具<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/bb4a9e561c50e07f3745c968b02867cc.jpg" alt="windows 平台下编译openssl 最新版本-3.0.5"></p> <p>命令执行完成如下<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/a5be9fadfe89a71c17edaa7dcdde96cf.jpg" alt="windows 平台下编译openssl 最新版本-3.0.5"></p> <h3><a id="_36" rel="nofollow"></a>编译测试</h3> <pre><code class="prism language-bash">nmake<span class="token builtin class-name">test</span></code></pre> <p>可以看到已经在测试中了<br /> 由于选择了最新版本的openssl ，可以看到部分密码套件已经不支持了（RC5 ）<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/2d0d0a57cc63df50f3062493154476a1.jpg" alt="windows 平台下编译openssl 最新版本-3.0.5"><br /> 最终测试成功，<code>PASS</code><br /> 这一步骤大概耗时10 分钟左右 ，可以选择性跳过<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/c1f0ebe2d0203116111c93c39d34040b.jpg" alt="windows 平台下编译openssl 最新版本-3.0.5"></p> <h3><a id="_48" rel="nofollow"></a>安装</h3> <pre><code class="prism language-bash">nmake<span class="token function">install</span><span class="token comment"># 这一步需要管理员权限才可以，因为要安装文件到C 盘</span></code></pre> <p>可以看到已经安装成功，详细版本信息<code>OpenSSL 1.1.1q 5 Jul 2022</code><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/c407c4251b9f9d5a1ed3e6d8812e3fa3.jpg" alt="windows 平台下编译openssl 最新版本-3.0.5"></p> <p><strong>关于configure、make、make install 三者的区别可以参考下面这篇文章</strong><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install"  rel="nofollow">https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install</a></p> </h1> <p>如果想省事儿，一键安装，可以选择下面的网站去下载即可<br /> 已有网站<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://slproweb.com/products/Win32OpenSSL.html"  rel="nofollow">https://slproweb.com/products/Win32OpenSSL.html</a></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-48861.htm">开动物医院需要什么资质（开动物诊疗所需要哪些条件）</a></p>
+                                        <p>下一个：<a href="/news/article-49369.htm">动物打疫苗是干啥的呀视频（动物注射疫苗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-21490.htm" title="深度学习Pytorch——神经网络">深度学习Pytorch——神经网络</a></li>
+                        <li class="py-2"><a href="/news/article-44921.htm" title="被野猫轻微抓伤有一点渗血有事吗图片（如果被野猫抓伤了只是流了一点点血会怎样?）">被野猫轻微抓伤有一点渗血有事吗图片（如果被野猫抓伤了只是流了一点点血会怎样?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-free-node-subscribe-links.htm" title="1月18日→19.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月18日→19.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-10-clash-verge-rev-node-share.htm" title="10月10日→18.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月10日→18.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-43435.htm" title="宠物领养范本（宠物领养协议简单版本）">宠物领养范本（宠物领养协议简单版本）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-free-clash-verge-rev-node.htm" title="10月20日→22.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月20日→22.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-28-clash-verge-rev-windows.htm" title="10月28日→21.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月28日→21.3M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-23-free-high-speed-nodes.htm" title="10月23日→21.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址">10月23日→21.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-clash-verge-rev-windows.htm" title="12月8日→21.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月8日→21.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21492.htm" title="Flask框架入门详解（以一个博客后台为例）_在线工具">Flask框架入门详解（以一个博客后台为例）_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
