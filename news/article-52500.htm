@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-52500.htm" />
+    <meta charset="utf-8">
+    <title>PHP如何通过引用传递</title>
+        <meta name="description" content="介绍 在PHP中，函数的参数可以按值传递或按引用传递。默认情况下，实际参数的值按值传递给形式参数，形式参数成为函数内部的局部变量。因此，对这些变量的修改不会更改实际参数变量的值。 当实参通过引用传递时" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-52500.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="PHP如何通过引用传递" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/15108643c4de996b96be08a29c8339cc.webp" />
+        <meta property="og:release_date" content="2025-02-07T07:18:52" />
+    <meta property="og:updated_time" content="2025-02-07T07:18:52" />
+        <meta property="og:description" content="介绍 在PHP中，函数的参数可以按值传递或按引用传递。默认情况下，实际参数的值按值传递给形式参数，形式参数成为函数内部的局部变量。因此，对这些变量的修改不会更改实际参数变量的值。 当实参通过引用传递时" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PHP如何通过引用传递">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">PHP如何通过引用传递</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<h2>介绍</h2> <p>在PHP中<strong>，</strong>函数的参数可以按值传递或按引用传递。默认情况下，实际参数的值按值传递给形式参数，形式参数成为函数内部的局部变量。因此，对这些变量的修改不会更改实际参数变量的值。</p> <p>当实参通过引用传递时，形式实参的值更改会反映在实际实参变量中，因为前者是对后者的引用。因此，按引用传递机制有助于间接处理全局空间中的数据。它还有助于克服一个函数只能返回一个变量的事实。</p> <h2>值传递</h2> <p>在下面的示例中，两个变量被传递给<code>swap()</code>函数。即使交换机制发生在函数内部，它也不会更改已传递变量的值</p> <h2>示例</h2> <pre>&lt;?php function&nbsp;swap($arg1,&nbsp;$arg2){ &nbsp;&nbsp;&nbsp;echo&nbsp;"inside&nbsp;function&nbsp;before&nbsp;swapping:&nbsp;arg1=$arg1&nbsp;arg2=$arg2\n"; &nbsp;&nbsp;&nbsp;$temp=$arg1; &nbsp;&nbsp;&nbsp;$arg1=$arg2; &nbsp;&nbsp;&nbsp;$arg2=$temp; &nbsp;&nbsp;&nbsp;echo&nbsp;"inside&nbsp;function&nbsp;after&nbsp;swapping:&nbsp;arg1=$arg1&nbsp;arg2=$arg2\n"; } $arg1=10; $arg2=20; echo&nbsp;"before&nbsp;calling&nbsp;function&nbsp;:&nbsp;arg1=$arg1&nbsp;arg2=$arg2\n"; swap($arg1,&nbsp;$arg2); echo&nbsp;"after&nbsp;calling&nbsp;function&nbsp;:&nbsp;arg1=$arg1&nbsp;arg2=$arg2\n"; ?&gt;</pre> <p>输出结果</p> <p>本示例给出以下输出</p> <pre>before&nbsp;calling&nbsp;function&nbsp;:&nbsp;arg1=10&nbsp;arg2=20 inside&nbsp;function&nbsp;before&nbsp;swapping:&nbsp;arg1=10&nbsp;arg2=20 inside&nbsp;function&nbsp;after&nbsp;swapping:&nbsp;arg1=20&nbsp;arg2=10 after&nbsp;calling&nbsp;function&nbsp;:&nbsp;arg1=10&nbsp;arg2=20</pre> <h2>通过参考</h2> <p>为了通过引用接收参数，使用的变量形式参数必须以＆符号为前缀。它引用了用于调用函数的变量。因此，内部函数交换的结果也将反映在传递的原始变量中</p> <h2>示例</h2> <pre>&lt;?php function&nbsp;swap(&amp;$arg1,&nbsp;&amp;$arg2){ &nbsp;&nbsp;&nbsp;echo&nbsp;"inside&nbsp;function&nbsp;before&nbsp;swapping:&nbsp;arg1=$arg1&nbsp;arg2=$arg2\n"; &nbsp;&nbsp;&nbsp;$temp=$arg1; &nbsp;&nbsp;&nbsp;$arg1=$arg2; &nbsp;&nbsp;&nbsp;$arg2=$temp; &nbsp;&nbsp;&nbsp;echo&nbsp;"inside&nbsp;function&nbsp;after&nbsp;swapping:&nbsp;arg1=$arg1&nbsp;arg2=$arg2\n"; } $arg1=10; $arg2=20; echo&nbsp;"before&nbsp;calling&nbsp;function&nbsp;:&nbsp;arg1=$arg1&nbsp;arg2=$arg2\n"; swap($arg1,&nbsp;$arg2); echo&nbsp;"after&nbsp;calling&nbsp;function&nbsp;:&nbsp;arg1=$arg1&nbsp;arg2=$arg2\n"; ?&gt;</pre> <p>输出结果</p> <p>交换结果如下所示</p> <pre>before&nbsp;calling&nbsp;function&nbsp;:&nbsp;arg1=10&nbsp;arg2=20 inside&nbsp;function&nbsp;before&nbsp;swapping:&nbsp;arg1=10&nbsp;arg2=20 inside&nbsp;function&nbsp;after&nbsp;swapping:&nbsp;arg1=20&nbsp;arg2=10 after&nbsp;calling&nbsp;function&nbsp;:&nbsp;arg1=20&nbsp;arg2=10</pre> <p>在下面的示例中，数组元素是对数组初始化之前声明的各个变量的引用。如果元素被修改，变量的值也会改变</p> <h2>示例</h2> <pre>&lt;?php $a&nbsp;=&nbsp;10; $b&nbsp;=&nbsp;20; $c=30; $arr&nbsp;=&nbsp;array(&amp;$a,&nbsp;&amp;$b,&nbsp;&amp;$c); for&nbsp;($i=0;&nbsp;$i&lt;3;&nbsp;$i++) $arr[$i]++; echo&nbsp;"$a&nbsp;$b&nbsp;$c"; ?&gt;</pre> <p>输出结果</p> <p>$a，$b和$c的值也会增加</p> <pre>11&nbsp;21&nbsp;31</pre> <p>也可以通过引用将数组传递给函数</p> <h2>示例</h2> <pre>&lt;?php function&nbsp;arrfunction(&amp;$arr){ &nbsp;&nbsp;&nbsp;for&nbsp;($i=0;$i&lt;5;$i++) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$arr[$i]=$arr[$i]+10; } $arr=[1,2,3,4,5]; arrfunction($arr); foreach&nbsp;($arr&nbsp;as&nbsp;$i) echo&nbsp;$i&nbsp;.&nbsp;"&nbsp;"; ?&gt;</pre> <p>输出结果</p> <p>修改后的数组将显示如下</p> <pre>11&nbsp;12&nbsp;13&nbsp;14&nbsp;15</pre> <h2>对象和参考</h2> <p>在PHP中，默认情况下，对象是通过引用传递的。创建对象的引用时，其引用也将以$this的形式作为参数发送，这也是对第一个对象的引用</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;test1{ &nbsp;&nbsp;&nbsp;private&nbsp;$name; &nbsp;&nbsp;&nbsp;function&nbsp;getname(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$this-&gt;name; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;function&nbsp;setname($name){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;name=$name; &nbsp;&nbsp;&nbsp;} } $obj1=new&nbsp;test1(); $obj2=&amp;$obj1; $obj1-&gt;setname("Amar"); echo&nbsp;"name:&nbsp;"&nbsp;.$obj2-&gt;getname(); ?&gt;</pre> <p>输出结果</p> <p>上面的代码将显示以下输出</p> <pre>name:&nbsp;Amar</pre> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-51966.htm">动物医院价格表图片大全集高清视频（动物医院照片）</a></p>
+                                        <p>下一个：<a href="/news/article-52501.htm">全国最便宜的进货平台联系电话（全国买东西最便宜的批发网站）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-43436.htm" title="动物防疫站电话咨询电话 动物防疫站电话咨询电话多少">动物防疫站电话咨询电话 动物防疫站电话咨询电话多少</a></li>
+                        <li class="py-2"><a href="/news/article-48303.htm" title="送养协议怎么写才合法一点（送养协议怎么写才合法一点呢）">送养协议怎么写才合法一点（送养协议怎么写才合法一点呢）</a></li>
+                        <li class="py-2"><a href="/news/article-35152.htm" title="动物疫苗价格表图片高清大全大图 动物疫苗价格表图片高清大全大图及价格">动物疫苗价格表图片高清大全大图 动物疫苗价格表图片高清大全大图及价格</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-today-clash-verge-rev-node.htm" title="11月22日→18.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月22日→18.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19193.htm" title="国产睡眠面膜哪个牌子好用(国产睡眠面膜哪个牌子好一点)">国产睡眠面膜哪个牌子好用(国产睡眠面膜哪个牌子好一点)</a></li>
+                        <li class="py-2"><a href="/news/article-31211.htm" title="重庆领养宠物在哪领养好一点（重庆哪里领养宠物）">重庆领养宠物在哪领养好一点（重庆哪里领养宠物）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-clash-verge-rev-node-share.htm" title="1月19日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月19日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-31733.htm" title="什么属相不能养猫家里养猫对财运好不好（什么属相不能养猫是真的还是假的）">什么属相不能养猫家里养猫对财运好不好（什么属相不能养猫是真的还是假的）</a></li>
+                        <li class="py-2"><a href="/news/article-24710.htm" title="动物疫苗的种类及作用（动物疫苗的了解）">动物疫苗的种类及作用（动物疫苗的了解）</a></li>
+                        <li class="py-2"><a href="/news/article-25639.htm" title="宠物打疫苗前可以驱虫吗（宠物打疫苗前可以驱虫吗有毒吗）">宠物打疫苗前可以驱虫吗（宠物打疫苗前可以驱虫吗有毒吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
