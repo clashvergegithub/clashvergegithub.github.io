@@ -129,6 +129,7 @@
                   				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>一.方法的介绍:</strong></p> <p><code>boolean anyMatch(Predicate&lt;? super T&gt; predicate)</code><br /> 只要有一个条件满足即返回true</p> <p><code>boolean allMatch(Predicate&lt;? super T&gt; predicate)</code><br /> 必须全部都满足才会返回true</p> <p><code>boolean noneMatch(Predicate&lt;? super T&gt; predicate)</code><br /> 全都不满足才会返回true</p> <p><strong>二.demo演示:</strong></p> <p>目的: 过滤集合中的元素,过滤条件是一个集合中的多个元素</p> <p>1.创建一个实体类:</p> <pre><code> public class User {      private String name;     private String phone;     public User(String name, String phone) {         this.name = name;         this.phone = phone;     }     public User() {     }     public String getName() {         return name;     }     public void setName(String name) {         this.name = name;     }       public String getPhone() {         return phone;     }     public void setPhone(String phone) {         this.phone = phone;     }     @Override     public String toString() {         return "User{" +                 "name='" + name + '\'' +                 ", phone='" + phone + '\'' +                 '}';     } }</code></pre> <p>2.数据的填充和测试:</p> <pre><code>public class TestStream {     public static void main(String[] args) {              User user = new User("李","1223123123");         User user1 = new User("哈哈","412412412");         User user2 = new User("haha","231231");         User user3 = new User("李","4241241241"); 	   /** 	    * 需要过滤的源数据 	    */         List&lt;User&gt; list =  new ArrayList&lt;User&gt;();         list.add(user);         list.add(user1);         list.add(user2);         list.add(user3);         System.out.println(list.size());         /**         * 过滤条件         * 只要名字是haha或者李的对象集合         */         List&lt;User&gt; userList = new ArrayList();         userList.add(new User("haha","2131231"));         userList.add(new User("李","231231"));         System.out.println(userList.size());                  List&lt;User&gt; result = list.stream().filter(users -&gt; userList.stream().anyMatch(user5 -&gt; user5.getName().equals(users.getName()))).collect(Collectors.toList());         System.out.println(result.size());         result.forEach( aa -&gt;{             System.out.println("姓名: "+aa.getName()+"，手机号: "+aa.getPhone());         });     } }</code></pre> <p>3.测试结果:</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/5cc06841026673c6fb8de449f20dfdd6.jpg" alt="anyMatch和allMatch以及noneMatch的区别"><br /> 4.补充:<br /> 获取集合中名字是"李"的所有对象</p> <pre><code>List a = list.stream().filter(user4 -&gt; user4.getName().equals("李")).collect(Collectors.toList()); //遍历list集合 a.forEach(System.out::println);</code></pre> <p>心得:<br /> &nbsp;&nbsp;&nbsp;&nbsp;最近通过研究java8的流式集合,发现非常的实用和节约代码的编写时间,建议搭建有时间多学习多用。</p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-53568.htm">SpringBoot 自定义ThreadPoolTaskScheduler线程池执行定时任务</a></p>
+                                        <p>下一个：<a href="/news/article-54109.htm">上海宠物领养网免费领养（上海领养宠物狗的平台）</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -138,16 +139,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-37491.htm" title="被猫咬了没出血怎么办?（被猫咬了没出血怎么办有什么症状）">被猫咬了没出血怎么办?（被猫咬了没出血怎么办有什么症状）</a></li>
+                        <li class="py-2"><a href="/news/article-21492.htm" title="Flask框架入门详解（以一个博客后台为例）_在线工具">Flask框架入门详解（以一个博客后台为例）_在线工具</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-12-22-clash-verge-rev-node-github.htm" title="12月22日→19.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月22日→19.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-28-node-share.htm" title="11月28日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月28日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-24-free-high-speed-nodes.htm" title="12月24日→21.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月24日→21.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-32698.htm" title="动物疫病预防控制中心电话（南京市动物疫病预防控制中心电话）">动物疫病预防控制中心电话（南京市动物疫病预防控制中心电话）</a></li>
-                        <li class="py-2"><a href="/news/article-27035.htm" title="Druid10 监控">Druid10 监控</a></li>
-                        <li class="py-2"><a href="/news/article-47871.htm" title="宠物医院收费价目表2023年11月（宠物医院服务项目价格表）">宠物医院收费价目表2023年11月（宠物医院服务项目价格表）</a></li>
-                        <li class="py-2"><a href="/news/article-28427.htm" title="猫体外驱虫多久一次合适（小猫驱虫多少钱一次）">猫体外驱虫多久一次合适（小猫驱虫多少钱一次）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-high-speed-nodes.htm" title="11月6日→19.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月6日→19.5M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-13-node-share-links.htm" title="1月13日→22.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月13日→22.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-clash-verge-rev-windows.htm" title="2月5日→22.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址">2月5日→22.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-today-clash-verge-rev-node.htm" title="11月22日→18.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月22日→18.7M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-50410.htm" title="幼猫一定要跟人睡不然就一直叫是为什么（幼猫为啥想跟着人睡觉）">幼猫一定要跟人睡不然就一直叫是为什么（幼猫为啥想跟着人睡觉）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-latest-clash-verge-rev-node.htm" title="11月8日→19.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月8日→19.2M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-node-subscribe.htm" title="12月18日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月18日→18.9M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-clash-verge-rev-node-github.htm" title="11月13日→23M/S|2024年最新免费节点Clash Verge Github订阅链接地址">11月13日→23M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-clash-verge-rev-node.htm" title="1月12日→20.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月12日→20.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33648.htm" title="JavaCPP快速入门(官方demo增强版)">JavaCPP快速入门(官方demo增强版)</a></li>
                     </ul>
     </div>
 </div>
@@ -159,7 +160,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
