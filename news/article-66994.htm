@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-66994.htm" />
+    <meta charset="utf-8">
+    <title>CentOS 7.6环境设置Redis开机自启动</title>
+        <meta name="description" content="[root@node03 init.d]# touch&nbsp;redis  注意：redis的安装路径: /root/redis/，按照实际安装路径来即可。 #!/bin/sh # # chkco" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-66994.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="CentOS 7.6环境设置Redis开机自启动" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/15108643c4de996b96be08a29c8339cc.webp" />
+        <meta property="og:release_date" content="2025-03-04T10:14:08" />
+    <meta property="og:updated_time" content="2025-03-04T10:14:08" />
+        <meta property="og:description" content="[root@node03 init.d]# touch&nbsp;redis  注意：redis的安装路径: /root/redis/，按照实际安装路径来即可。 #!/bin/sh # # chkco" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="CentOS 7.6环境设置Redis开机自启动">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">CentOS 7.6环境设置Redis开机自启动</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>[root@node03 init.d]# touch&nbsp;redis</p> </h1> <p>注意：redis的安装路径: /root/redis/，按照实际安装路径来即可。</p> <pre><code class="language-bash">#!/bin/sh # # chkconfig: 2345 10 90 # description: Start and Stop redis  ### BEGIN INIT INFO # Provides:     redis_6379 # Default-Start:        2 3 4 5 # Default-Stop:         0 1 6 # Short-Description:    Redis data structure server # Description:          Redis data structure server. See https://redis.io ### END INIT INFO  REDISPORT=6379                            #redis的默认端口，要和下文中的redis.conf中一致 EXEC=/root/redis/bin/redis-server         #redis服务端的命令 CLIEXEC=/root/redis/bin/redis-cli         #redis客户端的命令 PIDFILE=/var/run/redis_${REDISPORT}.pid   #reids的进程文件生成的位置 CONF="/root/redis/bin/redis.conf"         #redis的配置文件所在的目录  #AUTH="1234"  这句没什么用可以不要   case "$1" in     start)         if [ -f $PIDFILE ]         then                 echo "$PIDFILE exists, process is already running or crashed"         else                 echo "Starting Redis server..."                 $EXEC $CONF         fi         ;;     stop)         if [ ! -f $PIDFILE ]         then                 echo "$PIDFILE does not exist, process is not running"         else                 PID=$(cat $PIDFILE)                 echo "Stopping ..."                 $CLIEXEC -p $REDISPORT shutdown                 while [ -x /proc/${PID} ]                 do                     echo "Waiting for Redis to shutdown ..."                     sleep 1                 done                 echo "Redis stopped"         fi         ;;     restart|force-reload)         ${0} stop         ${0} start         ;;     *)         echo "Usage: /etc/init.d/redis {start|stop|restart|force-reload}" &gt;&amp;2            exit 1  esac</code></pre> </h1> <p>[root@node03 init.d]#&nbsp;chmod +777 redis</p> </h1> <p>[root@node03 init.d]#&nbsp;service redis start</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-66361.htm">动物医院前台工作内容（动物医院前台工作流程）</a></p>
+                                        <p>下一个：<a href="/news/article-66996.htm">重庆在哪里领养狗狗比较好（重庆在哪里领养狗狗比较好点）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-24709.htm" title="小型宠物粮食加工设备厂家有哪些 小型宠物粮食加工设备厂家有哪些品牌">小型宠物粮食加工设备厂家有哪些 小型宠物粮食加工设备厂家有哪些品牌</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-clash-verge-rev-node.htm" title="12月7日→20M/S|2024年最新免费节点Clash Verge Github订阅链接地址">12月7日→20M/S|2024年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-54651.htm" title="Python Pandas大数据处理">Python Pandas大数据处理</a></li>
+                        <li class="py-2"><a href="/news/article-58689.htm" title="动物疫苗公司10强排名 动物疫苗公司10强排名榜">动物疫苗公司10强排名 动物疫苗公司10强排名榜</a></li>
+                        <li class="py-2"><a href="/news/article-39480.htm" title="宠物医院坑人怎么投诉（宠物医院该向哪里投诉）">宠物医院坑人怎么投诉（宠物医院该向哪里投诉）</a></li>
+                        <li class="py-2"><a href="/news/article-26569.htm" title="动物疫苗和人体疫苗生产有什么区别呢英语 动物疫苗和人体疫苗生产有什么区别呢英语翻译">动物疫苗和人体疫苗生产有什么区别呢英语 动物疫苗和人体疫苗生产有什么区别呢英语翻译</a></li>
+                        <li class="py-2"><a href="/news/article-48304.htm" title="宠物主粮市场占有率排行 宠物主粮市场占有率排行榜">宠物主粮市场占有率排行 宠物主粮市场占有率排行榜</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-16-latest-clash-verge-rev-node.htm" title="2月16日→21.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址">2月16日→21.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21029.htm" title="东北农大动物医院电话是多少 东北农大动物医院电话是多少号">东北农大动物医院电话是多少 东北农大动物医院电话是多少号</a></li>
+                        <li class="py-2"><a href="/news/article-35153.htm" title="动物疫苗研制流程图（动物疫苗生产工艺流程图）">动物疫苗研制流程图（动物疫苗生产工艺流程图）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
