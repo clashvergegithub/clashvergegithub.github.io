@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-70858.htm" />
+    <meta charset="utf-8">
+    <title>VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU</title>
+        <meta name="description" content="一、驱动软件准备：从nvidia网站下载驱动，注意，和普通显卡下载驱动地址不同。  按照ESXi对应版本不同下载不同的安装包。安装包内含ESXi主机驱动和虚拟机驱动。 GPU显卡和物理服务器兼容查询：" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-70858.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/e8588ae9e049da903952edbfa4c8936f.webp" />
+        <meta property="og:release_date" content="2025-03-10T04:36:22" />
+    <meta property="og:updated_time" content="2025-03-10T04:36:22" />
+        <meta property="og:description" content="一、驱动软件准备：从nvidia网站下载驱动，注意，和普通显卡下载驱动地址不同。  按照ESXi对应版本不同下载不同的安装包。安装包内含ESXi主机驱动和虚拟机驱动。 GPU显卡和物理服务器兼容查询：" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<p data-track="1" data-pm-slice="0 0 []">一、驱动软件准备：从nvidia网站下载驱动，注意，和普通显卡下载驱动地址不同。</p> <div class="pgc-img"><img decoding="async" src="https://p6.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/60b670d5529340429e61dd9b75609df7~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="2041" data-height="1329" data-ic-uri=""/></div> <p data-track="2">按照ESXi对应版本不同下载不同的安装包。安装包内含ESXi主机驱动和虚拟机驱动。</p> <p data-track="3">GPU显卡和物理服务器兼容查询：（重要：一定要查兼容，最近遇到一客户反馈安装驱动后运行nvidia-smi各种报错，最后查询是因为不兼容导致。）<br />https://www.nvidia.com/zh-cn/data-center/resources/vgpu-certified-servers/</p> <p data-track="4">二、安装显卡驱动</p> <p data-track="5">1、将驱动vib上传到主机的/tmp目录下，开启SSH服务，并将主机进入维护模式，使用如下命令</p> <pre><code>esxcli software vib install -v /tmp/****.vib #安装驱动注意使用绝对路径</code></pre> <div class="pgc-img"><img decoding="async" src="https://p3.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/696909f4ea8442b2b88b3a6f5fc850d8~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1322" data-height="836" data-ic-uri=""/></div> <p data-track="7">虽然安装完毕后提示Reboot required: false，但是还是建议在这个时候将主机重启一下，使主机启动后正确的加载驱动程序文件。重启后将主机退出维护模式。</p> <p data-track="8">2、正确的安装并加载驱动程序以后，我们需要启动主机的xorg服务，xorg服务是ESXi主机为虚拟机提供3D硬件加速的服务，我们必须启动该服务后才能使GPU正常工作。</p> <p data-track="9">3、以下命令可以查看主机是否正确加载了驱动程序：</p> <pre><code>vmkload_mod -l | grep nvidia</code></pre> <p data-track="11">4、如下图所示：通过命令nvidia-smi来验证GPU卡是否正常工作，无报错，如图：</p> <div class="pgc-img"><img decoding="async" src="https://p6.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/45728f0d79814fd281642e345ba276de~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1354" data-height="1124" data-ic-uri=""/></div> <p data-track="12">5、修改图形设备活动类型：配置-图形-编辑</p> <div class="pgc-img"><img decoding="async" src="https://p26.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/388d4a7cf15848c0b947a72c2449cfb6~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1156" data-height="900" data-ic-uri=""/></div> <p data-track="13">默认为共享，修改成直接共享，并重启xorg服务。</p> <p data-track="14">6、编辑虚拟机</p> <div class="pgc-img"><img decoding="async" src="https://p26.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/88f1e460c6e24834a92e75720fe1b4eb~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1202" data-height="1256" data-ic-uri=""/></div> <div class="pgc-img"><img decoding="async" src="https://p6.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/cb319a49c48847c3b89f104e697e6d4f~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1204" data-height="1244" data-ic-uri=""/></div> <div class="pgc-img"><img decoding="async" src="https://p3.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/1006d0433ce044d9b4ac76b838eaa5af~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1484" data-height="542" data-ic-uri=""/></div> <p data-track="22">GPU配置文件为GPU显存大小，具体显存大小参考说明文档。并勾选预留所有内存。</p> <p data-track="16">7、安装虚拟机驱动，注意一定要使用安装包内对应版本的驱动（使用不同版本可能会有问题）</p> <div class="pgc-img"><img decoding="async" src="https://p3.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/351b781a44ed440ea206daa5ba7af311~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1366" data-height="670" data-ic-uri=""/></div> <p data-track="17">安装驱动后，重启虚拟机，在控制台界面，看到“黑屏”，这是正常的。使用远程桌面RDP协议登录，或者Horizon连接服务器的方式登录。</p> <div class="pgc-img"><img decoding="async" src="https://p26.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/a7c687ef1f0a4cf08c335e27d99b57bd~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="786" data-height="555" data-ic-uri=""/></div> <p data-track="18">设备管理器里面也能看到显卡已经安装成功了。</p> <p data-track="19">三、由于M60、RTX6000/RTX8000/A40显卡特殊，正式使用时，还需要额外安装许可证服务器，具体如下图所示！</p> <div class="pgc-img"><img decoding="async" src="https://p26.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/05de6cd1d1a8455492e67c9a7ff64dd4~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1915" data-height="451" data-ic-uri=""/></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-70202.htm">Java 语言实现简易版扫码登录_在线工具</a></p>
+                                        <p>下一个：<a href="/news/article-70859.htm">深圳哪里有免费领养宠物狗的地方（深圳免费领养狗狗正规网）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-37004.htm" title="动物疫苗龙头企业名单公示 动物疫苗龙头企业名单公示最新">动物疫苗龙头企业名单公示 动物疫苗龙头企业名单公示最新</a></li>
+                        <li class="py-2"><a href="/news/article-63268.htm" title="关于springboot项目中及mysql中Date、datetime、timestamp类型的相关说明">关于springboot项目中及mysql中Date、datetime、timestamp类型的相关说明</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-clash-verge-rev-node-share.htm" title="1月4日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月4日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-69555.htm" title="佳雯宠物医院几点开门营业的（佳雯宠物医院总院投诉电话）">佳雯宠物医院几点开门营业的（佳雯宠物医院总院投诉电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-node-share.htm" title="1月9日→18.6M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月9日→18.6M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-clash-verge-rev-node.htm" title="1月12日→20.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月12日→20.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-43927.htm" title="大型颗粒饲料机报价（大型颗粒饲料机报价图片）">大型颗粒饲料机报价（大型颗粒饲料机报价图片）</a></li>
+                        <li class="py-2"><a href="/news/article-41947.htm" title="今年公务员国考人数（今年国考人数多少）">今年公务员国考人数（今年国考人数多少）</a></li>
+                        <li class="py-2"><a href="/news/article-54651.htm" title="Python Pandas大数据处理">Python Pandas大数据处理</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-today-clash-verge-rev-node.htm" title="1月8日→18.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月8日→18.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

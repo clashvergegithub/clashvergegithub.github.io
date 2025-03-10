@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-69554.htm" />
+    <meta charset="utf-8">
+    <title>UnrealEngine创建自定义资产类型</title>
+        <meta name="description" content="这篇文章记录了将UObject实例保存在Asset文件的方法，用这个方法可以将自定义的UObject数据序列化保存到文件，可以用于自定义UE资源类型。   这一步比较简单，按照正常的方式创建C++类即" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-69554.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="UnrealEngine创建自定义资产类型" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/e8588ae9e049da903952edbfa4c8936f.webp" />
+        <meta property="og:release_date" content="2025-03-08T05:05:49" />
+    <meta property="og:updated_time" content="2025-03-08T05:05:49" />
+        <meta property="og:description" content="这篇文章记录了将UObject实例保存在Asset文件的方法，用这个方法可以将自定义的UObject数据序列化保存到文件，可以用于自定义UE资源类型。   这一步比较简单，按照正常的方式创建C++类即" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="UnrealEngine创建自定义资产类型">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">UnrealEngine创建自定义资产类型</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				</h1> <blockquote> <p>这篇文章记录了将UObject实例保存在Asset文件的方法，用这个方法可以将自定义的UObject数据序列化保存到文件，可以用于自定义UE资源类型。</p> </blockquote> </h1> <p>这一步比较简单，按照正常的方式创建C++类即可。</p> <p>在这里我创建一个简单的UCustomAsset派生自UObject，包含一个Value字段作为演示。</p> <pre><code class="language-cpp">UCLASS() class LEARNUI_API UCustomAsset final : public UObject { 	GENERATED_BODY() public: 	UPROPERTY(EditAnywhere, BlueprintReadWrite) 	FString Value; };</code></pre> </h1> <blockquote> <p>这一步是为了在Content窗口中添加右键菜单，像创建其他Asset一样快速创建CustomAsset。主要分为两步，创建对应的Factory和TypeAction类。</p> </blockquote> <h2 id="创建mydatafactory">创建MyDataFactory</h2> <p><code>MyDataFactory</code>中包含了具体的生成UObject实例的实现，我们接下来创建的Asset是由Factory实例化出来的。</p> <pre><code class="language-cpp">UCLASS() class LEARNUIEDITOR_API UMyDataFactory final : public UFactory { 	GENERATED_BODY() public: 	UMyDataFactory(){         // 指定是否可以通过菜单来创建         bCreateNew = true;         // 创建Asset之后是否自动打开编辑         bEditAfterNew = true;         // 指定支持的类型         SupportedClass = UMyData::StaticClass();     }     // 重载FactoryCreateNew方法，创建UMyData实例 	virtual UObject* FactoryCreateNew(UClass* InClass, UObject* InParent, FName InName, EObjectFlags Flags, UObject* Context, FFeedbackContext* Warn) override{ 	    return NewObject&lt;UMyData&gt;(InParent, InName, Flags);     } };</code></pre> <h2 id="创建mydatatypeaction">创建MyDataTypeAction</h2> <p><code>FMyDataTypeAction</code>定义了Asset的显示名称、类型、显示颜色和所在分类。</p> <pre><code class="language-cpp">// 至少需要重载以下四个方法 class FMyDataTypeAction final : public FAssetTypeActions_Base { public: 	virtual FText GetName() const override; 	virtual UClass* GetSupportedClass() const override; 	virtual FColor GetTypeColor() const override; 	virtual uint32 GetCategories() override; };</code></pre> <p>以上代码中，<code>GetCategories</code>可以返回引擎中已经注册的Category，也可以使用以下代码注册自己的Category。</p> <pre><code class="language-cpp">Category = FAssetToolsModule::GetModule().Get().RegisterAdvancedAssetCategory(FName("Custom"), FText::FromString("Custom"));</code></pre> <p>需要使用<code>FAssetToolsModule</code>注册<code>FMyDataTypeAction</code>以使其生效。</p> <pre><code class="language-cpp">IAssetTools&amp; AssetTool = FAssetToolsModule::GetModule().Get();  // 创建TypeAction实例并存储起来，方便在合适的时候调用UnregisterAssetTypeActions反注册 AssetTypeActions.Emplace(MakeShared&lt;FMyDataTypeAction&gt;());  for (TSharedPtr&lt;FAssetTypeActions_Base&gt; AssetType : AssetTypeActions) { 	AssetTool.RegisterAssetTypeActions(AssetType.ToSharedRef()); }</code></pre> </h1> <p>在ContentBrowser的<code>Add/Import</code>菜单中，可以看到自定义的MyData类型。</p> <p><img decoding="async" src="https://picgo-1251759020.cos.ap-guangzhou.myqcloud.com/202204162015627.png" alt="UnrealEngine创建自定义资产类型" width="400px"/></p> <p>创建完成后，双击打开编辑窗口，可以修改UProperty字段的值。</p> <p><img decoding="async" src="https://picgo-1251759020.cos.ap-guangzhou.myqcloud.com/202204162017147.png" alt="UnrealEngine创建自定义资产类型" width="400px"/></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-68914.htm">广州宠物狗领养中心地址电话（广州领养狗狗正规机构在哪里）</a></p>
+                                        <p>下一个：<a href="/news/article-69555.htm">佳雯宠物医院几点开门营业的（佳雯宠物医院总院投诉电话）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-63268.htm" title="关于springboot项目中及mysql中Date、datetime、timestamp类型的相关说明">关于springboot项目中及mysql中Date、datetime、timestamp类型的相关说明</a></li>
+                        <li class="py-2"><a href="/news/article-65106.htm" title="宠物粮食厂家电话 宠物粮食厂家电话号码">宠物粮食厂家电话 宠物粮食厂家电话号码</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-node-subscribe-links.htm" title="3月8日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月8日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-38474.htm" title="兽用疫苗稀释液是什么成分的（禽用疫苗稀释液）">兽用疫苗稀释液是什么成分的（禽用疫苗稀释液）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-node-share.htm" title="2月1日→21.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址">2月1日→21.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-free-high-speed-nodes.htm" title="2月18日→22.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址">2月18日→22.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-66994.htm" title="CentOS 7.6环境设置Redis开机自启动">CentOS 7.6环境设置Redis开机自启动</a></li>
+                        <li class="py-2"><a href="/news/article-67611.htm" title="动物疫苗有效期多久啊多少钱（动物疫苗保质期多久）">动物疫苗有效期多久啊多少钱（动物疫苗保质期多久）</a></li>
+                        <li class="py-2"><a href="/news/article-58009.htm" title="vue日期格式处理详解">vue日期格式处理详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-20-free-node-subscribe-links.htm" title="2月20日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">2月20日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
