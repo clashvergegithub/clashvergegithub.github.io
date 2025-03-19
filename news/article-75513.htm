@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-75513.htm" />
+    <meta charset="utf-8">
+    <title>vue.js实现标签页切换</title>
+        <meta name="description" content="第二个实例是关于标签页切换的，先看一下效果：  这也是一个很常见的交互效果，以往正常的javascript写法是给各个按钮绑定事件来切换不同的层，当然也可以用纯css写，给上面的三个切换的层分别添加一" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-75513.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="vue.js实现标签页切换" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/3aae8218583547276d690dea2c77299e.webp" />
+        <meta property="og:release_date" content="2025-03-17T09:39:45" />
+    <meta property="og:updated_time" content="2025-03-17T09:39:45" />
+        <meta property="og:description" content="第二个实例是关于标签页切换的，先看一下效果：  这也是一个很常见的交互效果，以往正常的javascript写法是给各个按钮绑定事件来切换不同的层，当然也可以用纯css写，给上面的三个切换的层分别添加一" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue.js实现标签页切换">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">vue.js实现标签页切换</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);">第二个实例是关于标签页切换的，先看一下效果：</p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);"><img decoding="async" src="http://img.555519.xyz/uploads/20230112/92bfbbbe8f734d589fe475d7d052bebf.jpg" alt="vue.js实现标签页切换"></p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);">这也是一个很常见的交互效果，以往正常的javascript写法是给各个按钮绑定事件来切换不同的层，当然也可以用纯css写，给上面的三个切换的层分别添加一个单选按钮的兄弟节点，再用绝对定位把单选按钮定位在三个button上面，这样就可以用:checked伪类来单选按钮的兄弟元素，即对应的不同的层，我简单的写了一下DOM结构，大概就是这样：</p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);"><img decoding="async" src="http://img.555519.xyz/uploads/20230112/f5965afc5b2a987de2dbbb6e27acfda0.jpg" alt="vue.js实现标签页切换"></p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);">那么用<code style="margin:0px;padding:0px;">vue.js</code>实现上述的效果，其实也有两种途径，一种使用<code style="margin:0px;padding:0px;">vue-router</code>，<code style="margin:0px;padding:0px;">vue-router</code>是<code style="margin:0px;padding:0px;">vue.js</code>的一个路由组件，在单页面应用中非常非常流行，如果切换的层数据量非常大的话，比如每个层都要有服务器进行大量的数据交互，那么强烈建议使用<code style="margin:0px;padding:0px;">vue-router</code>，因为<code style="margin:0px;padding:0px;">vue-router</code>在每次切换路由的过程中，都会自动销毁（destroyed）前面的组件，这样在频繁的操作中页面也不会卡，而且<code style="margin:0px;padding:0px;">vue-router</code>也定义了页面切换过程中的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://router.vuejs.org/zh-cn/advanced/transitions.html"  style="margin:0px;padding:0px;color:#000000;" rel="nofollow">过渡动画</a>。</p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);">如果数据量并不复杂的话，可以直接通过<code style="margin:0px;padding:0px;">vue.js</code>定义切换状态来切换不同的层。</p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);">首先先把template和css写好：</p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);"><img decoding="async" src="http://img.555519.xyz/uploads/20230112/deb930062006b8c12ce663603919165e.jpg" alt="vue.js实现标签页切换"></p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);">其中introduce、chatbar、videobar分别代表三个需要跟随button切换的组件，接下来就可以给<code style="margin:0px;padding:0px;">vue.js</code>的button节点绑定事件来操控点击状态：</p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);"><img decoding="async" src="http://img.555519.xyz/uploads/20230112/f22293a5575f456dcb9f324c7a64f3ea.jpg" alt="vue.js实现标签页切换"></p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);"><img decoding="async" src="http://img.555519.xyz/uploads/20230112/51d6037e21f626795cb5582da476ebc6.jpg" alt="vue.js实现标签页切换"></p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);">点击不同的button，会让active的状态改变，同时这个状态会作用到button上面，比如让被点击的button有个高亮的效果等等。</p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);">那么如何让active的状态作用到弹出层呢？其实定义一个computed函数就可以了：</p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);"><img decoding="async" src="http://img.555519.xyz/uploads/20230112/f14fcd8aec07dda303c97e7c8e671efa.jpg" alt="vue.js实现标签页切换"></p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);"><img decoding="async" src="http://img.555519.xyz/uploads/20230112/f0450dc3c3c9ad9048d01529c066f0d1.jpg" alt="vue.js实现标签页切换"></p> <p style="margin:10px auto;color:rgb(0,0,0);font-family:'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;font-size:14px;text-align:left;background-color:rgb(255,255,255);">大功告成！</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-74844.htm">太原宠物领养中心在哪（太原宠物领养中心在哪儿）</a></p>
+                                        <p>下一个：<a href="/news/article-75514.htm">参观动物医院的心得体会300字（参观动物园心得）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-12-free-node-subscribe.htm" title="2月12日→20.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址">2月12日→20.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-54110.htm" title="动物接种疫苗多少钱一次啊（动物防疫疫苗）">动物接种疫苗多少钱一次啊（动物防疫疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-node-subscribe-links.htm" title="3月8日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月8日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-latest-clash-verge-rev-node.htm" title="3月2日→20.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月2日→20.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-68913.htm" title="克隆Gitee代码报错Unable to connect to gitee.com: gitee.com[0: 180.97.125.228]: errno=Unknown error">克隆Gitee代码报错Unable to connect to gitee.com: gitee.com[0: 180.97.125.228]: errno=Unknown error</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-node-share-links.htm" title="1月22日→21.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月22日→21.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-74152.htm" title="打过疫苗的猫抓伤了轻微出血要打疫苗吗多少钱（打了疫苗猫抓了一下出了点血要打疫苗吗?）">打过疫苗的猫抓伤了轻微出血要打疫苗吗多少钱（打了疫苗猫抓了一下出了点血要打疫苗吗?）</a></li>
+                        <li class="py-2"><a href="/news/article-58009.htm" title="vue日期格式处理详解">vue日期格式处理详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-free-subscribe-node.htm" title="3月13日→20.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月13日→20.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-clash-verge-rev-node-share.htm" title="1月20日→20.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址">1月20日→20.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
