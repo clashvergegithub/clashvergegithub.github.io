@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-86661.htm" />
+    <meta charset="utf-8">
+    <title>.Net中字符串不变性与相等判断的特殊场景</title>
+        <meta name="description" content="今天写bug的时候帮同事解决了一个有趣的问题，可能很多人都会答错。分享给大家。  请看以下例子，并回答问题。 var s1 = "12"; var s2 = "12";  //序列化方式1 var o" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-86661.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content=".Net中字符串不变性与相等判断的特殊场景" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/6186d4aa4e907eedb22c15e3d29b7631.webp" />
+        <meta property="og:release_date" content="2025-04-02T07:44:01" />
+    <meta property="og:updated_time" content="2025-04-02T07:44:01" />
+        <meta property="og:description" content="今天写bug的时候帮同事解决了一个有趣的问题，可能很多人都会答错。分享给大家。  请看以下例子，并回答问题。 var s1 = "12"; var s2 = "12";  //序列化方式1 var o" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content=".Net中字符串不变性与相等判断的特殊场景">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">.Net中字符串不变性与相等判断的特殊场景</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<p>今天写bug的时候帮同事解决了一个有趣的问题，可能很多人都会答错。分享给大家。</p> </h1> <p>请看以下例子，并回答问题。</p> <pre><code class="language-c#">var s1 = "12"; var s2 = "12";  //序列化方式1 var o3 = Newtonsoft.Json.JsonConvert.DeserializeObject&lt;string&gt;(Newtonsoft.Json.JsonConvert.SerializeObject(s1)); //序列化方式2 MemoryStream stream = new MemoryStream(); System.Runtime.Serialization.Formatters.Binary.BinaryFormatter bf = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter(); bf.Serialize(stream, s1); stream.Seek(0, SeekOrigin.Begin); var o4 = bf.Deserialize(stream);  //====分割线===================================================  var e1 = object.ReferenceEquals(s1, s2);  var e2 = o4 == s1;  var e3 = s1.Equals(o4);  var e4 = o3 == o4;  Console.ReadKey();</code></pre> <p>请回答分割线后e1, e2, e3, e4 值为true还是false。</p> <p>人人都知道在.Net中字符串是享元模式的经典范例。字符串具有不变性。（至少在托管层，事实上可以在非托管层修改字符串的值），但你真的能回答对上面的问题么？</p> <hr/> </h1> <pre><code class="language-c#"> e1 = true; e2 = false; e3 = true; e4 = false;</code></pre> <p>要了解这个问题首先可以看下字符串在内存中的布局。</p> <h2 id="如何在visual-studio中查看变量的内存布局">如何在visual studio中查看变量的内存布局</h2> <p>在VS中可以非常方便的查看托管或非托管变量的内存值。方法如下。</p> <ul> <li>依次在调试模式下打开 调试 -&gt; 窗口 -&gt; 内存 -&gt; 内存1（1~4均可） 打开内存对话框。</li> <li>在地址栏中输入引用类型的变量名即可。</li> <li><strong>如果你的数据是struct类型则需要加&amp;取地址符。</strong></li> </ul> <h2 id="字符串变量在内存中的布局">字符串变量在内存中的布局</h2> <p>在.Net中字符串是以UTF-16格式在内存中保存的。在本例中s1的内存如下。</p> <p><code>00 00 00 00 00 00 00 00 98 d6 fc e5 fb 7f 00 00 02 00 00 00 31 00 32 00</code></p> <p>这里可能与你拿到的结果不一样。你可能并没有前8位<code>0x00</code>，因为我把对象头带上了。下面依次解释各段含义。</p> <ul> <li><code>00 00 00 00 00 00 00 00</code> 最开始的8比特是对象头。其中，在64位下，高4位为0，低4位为一个不为0的数（这里由于并没有执行lock或Gethashcode操作，所以这里为0，感兴趣的自行实验.）</li> <li><code>98 d6 fc e5 fb 7f 00 00</code>对象的<code>MethodTable</code>，根据类型而不同,对象的引用指向的位置。</li> <li><code>02 00 00 00</code> 字符串长度，这里是2。</li> <li><code>31 00 32 00</code> 字符串数组<code>* char</code>，注意都是小端模式。</li> </ul> <p>拿以上<code>s1 s2 o3 o4</code>分别实验可以发现<strong>他们的内存一模一样</strong>，其中<code>s1 s2</code>直接就是同一块内存地址，<strong>但剩下的内存地址都不一样</strong>。</p> <h2 id="比较与解答">比较与解答</h2> <ol> <li> <p><code>e1 = true;</code> 通过内存看合情合理，毕竟都同一块内存了。</p> </li> <li> <p><code>e2 = false;</code> 这里如果用的VS的版本比较高的话，也能看出来。因为这里VS会提示：</p> <blockquote> <p>可能非有意的引用比较。</p> </blockquote> <p>既然是引用比较，内存地址都不一样，肯定是false了。但是如果vs版本不高的话则迷惑性就较大了，其实这里做的是<code>ReferenceEquals</code>的比较。</p> </li> <li> <p><code>e3 = true;</code> 这里问题出在.Net代码里。字符串类型<code>Equals</code>方法被重载了。</p> </li> </ol> <pre><code class="language-c#">        // Determines whether two strings match.         public override bool Equals([NotNullWhen(true)] object? obj)         {             if (object.ReferenceEquals(this, obj))                 return true;              if (!(obj is string str))                 return false;              if (this.Length != str.Length)                 return false;              return EqualsHelper(this, str);         }</code></pre> <p><code>EqualsHelper</code>方法最终则调用如下。（在.Net 6下）</p> <pre><code class="language-c#">        // Optimized byte-based SequenceEquals. The "length" parameter for this one is declared a nuint rather than int as we also use it for types other than byte         // where the length can exceed 2Gb once scaled by sizeof(T).         public static unsafe bool SequenceEqual(ref byte first, ref byte second, nuint length)</code></pre> <p>由于实现过于复杂（.Net framework 4.5.2下则较简单，直接按长度比较char，有兴趣的自行查阅），这里就不贴具体实现了。我们很容易看出这里比较的目的是比较两段内存是否相等，显然为<code>true</code>。</p> <ol start="4"> <li><code>e4 = false;</code>这里是为了比较不同序列化方式的影响，和<code>e2</code>类似，结果显然是<code>false</code>。</li> </ol> </h1> <p>虽然.Net中字符串是享元模式创建的，但并不能保证同一字符串在内存里只有一份。比如序列化情况等例外情况。如果读者知道其他情况也可以告诉我，提前说声感谢</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-86660.htm">关于Hadoop在java客户端进行下载时的异常java.io.FileNotFoundException: Hadoop home directory is no existed的解决办法</a></p>
+                                        <p>下一个：<a href="/news/article-87383.htm">动物防疫站打针需要什么（动物防疫打针收费吗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-66996.htm" title="重庆在哪里领养狗狗比较好（重庆在哪里领养狗狗比较好点）">重庆在哪里领养狗狗比较好（重庆在哪里领养狗狗比较好点）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-clash-verge-rev-nodes.htm" title="3月20日→20.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月20日→20.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-76200.htm" title="重庆宠物猫领养 重庆宠物猫领养中心">重庆宠物猫领养 重庆宠物猫领养中心</a></li>
+                        <li class="py-2"><a href="/news/article-75513.htm" title="vue.js实现标签页切换">vue.js实现标签页切换</a></li>
+                        <li class="py-2"><a href="/news/article-80318.htm" title="宠物医院点评（宠物医院点评语）">宠物医院点评（宠物医院点评语）</a></li>
+                        <li class="py-2"><a href="/news/article-86661.htm" title=".Net中字符串不变性与相等判断的特殊场景">.Net中字符串不变性与相等判断的特殊场景</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-clash-verge-rev-windows.htm" title="3月30日→20.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月30日→20.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-free-clash-verge-rev-node.htm" title="3月26日→18M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月26日→18M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-79596.htm" title="宠物粮食品牌起名大全四个字开头的名字（宠物粮品牌名称）">宠物粮食品牌起名大全四个字开头的名字（宠物粮品牌名称）</a></li>
+                        <li class="py-2"><a href="/news/article-75514.htm" title="参观动物医院的心得体会300字（参观动物园心得）">参观动物医院的心得体会300字（参观动物园心得）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
