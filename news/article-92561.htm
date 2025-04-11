@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-92561.htm" />
+    <meta charset="utf-8">
+    <title>SpringBoot 字节数组自动转化为Base64格式的问题</title>
+        <meta name="description" content="问题描述 Spring Boot微服务架构，两个服务间请求数据，发现byte数组格式的字段会自动转化为Base64格式 问题研究 经过研究发现，这个是因为RestTemplate在发起exchange" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-92561.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="SpringBoot 字节数组自动转化为Base64格式的问题" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/49e04ad4a5bfdeb9757bc81e26af0fed.webp" />
+        <meta property="og:release_date" content="2025-04-10T08:16:58" />
+    <meta property="og:updated_time" content="2025-04-10T08:16:58" />
+        <meta property="og:description" content="问题描述 Spring Boot微服务架构，两个服务间请求数据，发现byte数组格式的字段会自动转化为Base64格式 问题研究 经过研究发现，这个是因为RestTemplate在发起exchange" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot 字节数组自动转化为Base64格式的问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">SpringBoot 字节数组自动转化为Base64格式的问题</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <h2><a id="_2" rel="nofollow"></a>问题描述</h2> <p>Spring Boot微服务架构，两个服务间请求数据，发现byte数组格式的字段会自动转化为Base64格式</p> <h2><a id="_4" rel="nofollow"></a>问题研究</h2> <p>经过研究发现，这个是因为RestTemplate在发起exchange的调用时候，会把字段类型为字节数组转化为Base64格式，然后再发起请求到目标服务。<br /> 代码位置：com.fasterxml.jackson.databind.ser.std.ByteArraySerializer这个类的serialize方法</p> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">serialize</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> value<span class="token punctuation">,</span><span class="token class-name">JsonGenerator</span> g<span class="token punctuation">,</span><span class="token class-name">SerializerProvider</span> provider<span class="token punctuation">)</span><span class="token keyword">throws</span><span class="token class-name">IOException</span><span class="token punctuation">{<!-- --></span>         g<span class="token punctuation">.</span><span class="token function">writeBinary</span><span class="token punctuation">(</span>provider<span class="token punctuation">.</span><span class="token function">getConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBase64Variant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span> value<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>依赖关系为：spring-boot-starter-web-&gt;spring-boot-starter-json-&gt;com.fasterxml.jackson.core-&gt;jackson-databind</p> <h2><a id="_14" rel="nofollow"></a>结论</h2> <p>RestTemplate的exchange调用会把Request参数里面的字节数组转为Base64格式，这样做的原因可能有很多，我觉得有一点这样做的好处是可以节省空间，请参考如下<br /> https://stackoverflow.com/questions/67156878/why-does-jackson-convert-byte-array-to-base64-string-on-converting-to-json</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-91837.htm">领养狐狸领养证（huxly领养）</a></p>
+                                        <p>下一个：<a href="/news/article-92562.htm">东门宠物用品批发市场地址（东门老街宠物店）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-67612.htm" title="厦门领养宠物猫中心电话 厦门领养宠物猫中心电话号码">厦门领养宠物猫中心电话 厦门领养宠物猫中心电话号码</a></li>
+                        <li class="py-2"><a href="/news/article-76873.htm" title="动物医院大众点评文案 动物医院大众点评文案怎么写">动物医院大众点评文案 动物医院大众点评文案怎么写</a></li>
+                        <li class="py-2"><a href="/news/article-68913.htm" title="克隆Gitee代码报错Unable to connect to gitee.com: gitee.com[0: 180.97.125.228]: errno=Unknown error">克隆Gitee代码报错Unable to connect to gitee.com: gitee.com[0: 180.97.125.228]: errno=Unknown error</a></li>
+                        <li class="py-2"><a href="/news/article-75513.htm" title="vue.js实现标签页切换">vue.js实现标签页切换</a></li>
+                        <li class="py-2"><a href="/news/article-78232.htm" title="疫苗的分类不包括动物疫苗还是重组疫苗（疫苗分类包括重组疫苗吗）">疫苗的分类不包括动物疫苗还是重组疫苗（疫苗分类包括重组疫苗吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-free-node-subscribe.htm" title="4月2日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月2日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-node-subscribe-links.htm" title="3月8日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月8日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-clash-verge-rev-node.htm" title="3月18日→22.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月18日→22.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-84514.htm" title="python神经网络Keras构建CNN网络训练_python">python神经网络Keras构建CNN网络训练_python</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-free-subscribe-node.htm" title="3月13日→20.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月13日→20.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
