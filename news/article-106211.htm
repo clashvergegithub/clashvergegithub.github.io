@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-106211.htm" />
+    <meta charset="utf-8">
+    <title>springboot docker 分层打包镜像，精减变动体积</title>
+        <meta name="description" content="Dockerfile FROM openjdk:8-jdk-alpine as basic VOLUME /tmp COPY BOOT-INF/lib /app/lib COPY META-INF /" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-106211.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="springboot docker 分层打包镜像，精减变动体积" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/8931023d52fb4d6e0bb202efb8bc3621.webp" />
+        <meta property="og:release_date" content="2025-04-28T09:43:23" />
+    <meta property="og:updated_time" content="2025-04-28T09:43:23" />
+        <meta property="og:description" content="Dockerfile FROM openjdk:8-jdk-alpine as basic VOLUME /tmp COPY BOOT-INF/lib /app/lib COPY META-INF /" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot docker 分层打包镜像，精减变动体积">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">springboot docker 分层打包镜像，精减变动体积</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>Dockerfile</p> <pre><code>FROM openjdk:8-jdk-alpine as basic VOLUME /tmp COPY BOOT-INF/lib /app/lib COPY META-INF /app/META-INF COPY BOOT-INF/classes /app/classes  FROM openjdk:8-jdk-alpine COPY --from=basic /app/lib /app/lib COPY --from=basic /app/META-INF /app/META-INF COPY --from=basic /app/classes /app/classes  ENTRYPOINT java -XX:MaxRAMFraction=2 -cp app/classes:app/lib/* com.example.demo.DemoApplication</code></pre> <p>构建脚本</p> <pre><code>repository="harbor.hknaruto.com/library/training"  mvn clean package -Dmaven.test.skip=true -T4 mkdir target/dependency cp Dockerfile target/dependency (   cd target/dependency   jar -xf ../*.jar   docker build -t "$repository":"$(git branch | awk '{print $2}')"."$(git rev-parse --short HEAD)" .   # 清理老的镜像，本地保留3个最近构建的镜像，从第4个开始，删除本地镜像   docker images | grep "$repository" | tail -n +4 | awk '{print $3}' | xargs -i docker rmi {} )</code></pre> <p>第一次构建效果</p> <pre><code>$ docker history harbor.hknaruto.com/library/training:master.30b943a IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT f5d2de97b288        12 seconds ago      /bin/sh -c #(nop)  ENTRYPOINT ["/bin/sh" "-c…   0B                   a50c1ee7d59c        12 seconds ago      /bin/sh -c #(nop) COPY dir:590e06da69bc4b6fc…   10.8kB               5b91b3624e0a        12 seconds ago      /bin/sh -c #(nop) COPY dir:34d1e4a296310a6ec…   2.17kB               52dcee3f3e35        4 minutes ago       /bin/sh -c #(nop) COPY dir:94d828a4ed8596549…   20MB                 a3562aa0b991        2 years ago         /bin/sh -c set -x  &amp;&amp; apk add --no-cache   o…   99.3MB               &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV JAVA_ALPINE_VERSION=8…   0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV JAVA_VERSION=8u212       0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV PATH=/usr/local/sbin:…   0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV JAVA_HOME=/usr/lib/jv…   0B                   &lt;missing&gt;           2 years ago         /bin/sh -c {   echo '#!/bin/sh';   echo 'set…   87B                  &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV LANG=C.UTF-8             0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop) ADD file:a86aea1f3a7d68f6a…   5.53MB</code></pre> <p>第二次构建效果</p> <pre><code>$ docker history harbor.hknaruto.com/library/training:master.30b943a IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT abc62088b1b6        1 second ago        /bin/sh -c #(nop)  ENTRYPOINT ["/bin/sh" "-c…   0B                   61cf540de3ff        1 second ago        /bin/sh -c #(nop) COPY dir:d4dc9a24cb84bd616…   10.8kB               5b91b3624e0a        2 minutes ago       /bin/sh -c #(nop) COPY dir:34d1e4a296310a6ec…   2.17kB               52dcee3f3e35        5 minutes ago       /bin/sh -c #(nop) COPY dir:94d828a4ed8596549…   20MB                 a3562aa0b991        2 years ago         /bin/sh -c set -x  &amp;&amp; apk add --no-cache   o…   99.3MB               &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV JAVA_ALPINE_VERSION=8…   0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV JAVA_VERSION=8u212       0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV PATH=/usr/local/sbin:…   0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV JAVA_HOME=/usr/lib/jv…   0B                   &lt;missing&gt;           2 years ago         /bin/sh -c {   echo '#!/bin/sh';   echo 'set…   87B                  &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  ENV LANG=C.UTF-8             0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B                   &lt;missing&gt;           2 years ago         /bin/sh -c #(nop) ADD file:a86aea1f3a7d68f6a…   5.53MB</code></pre> <p>其中最大的lib目录由于没有发生变动，并没有执行更新。</p> <p>注意，如果不采用COPY --from 方式，即使lib目录没有更新，也会重新创建新的层！导致镜像变动部分仍然很大。</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-106210.htm">【impala】python通过kerberos连接impala操作hive，及解决遇到的问题</a></p>
+                                        <p>下一个：<a href="/news/article-107142.htm">Halo 开源项目学习评论与点赞</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-clash-verge-rev-nodes.htm" title="3月25日→19.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月25日→19.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-73493.htm" title="宠物医院看仓鼠贵吗（普通宠物医院看仓鼠吗）">宠物医院看仓鼠贵吗（普通宠物医院看仓鼠吗）</a></li>
+                        <li class="py-2"><a href="/news/article-97792.htm" title="猫的宠物疫苗多少钱一针（宠物猫疫苗大概多少钱）">猫的宠物疫苗多少钱一针（宠物猫疫苗大概多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-free-subscribe-node.htm" title="3月31日→18.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月31日→18.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-93312.htm" title="猫疫苗3针间隔多长时间（猫疫苗3针间隔多长时间打一次）">猫疫苗3针间隔多长时间（猫疫苗3针间隔多长时间打一次）</a></li>
+                        <li class="py-2"><a href="/news/article-97001.htm" title="动物接种狂犬疫苗有效期是多久（动物接种狂犬疫苗有效期是多久呢）">动物接种狂犬疫苗有效期是多久（动物接种狂犬疫苗有效期是多久呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-clash-verge-rev-node.htm" title="3月11日→21.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月11日→21.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-68913.htm" title="克隆Gitee代码报错Unable to connect to gitee.com: gitee.com[0: 180.97.125.228]: errno=Unknown error">克隆Gitee代码报错Unable to connect to gitee.com: gitee.com[0: 180.97.125.228]: errno=Unknown error</a></li>
+                        <li class="py-2"><a href="/news/article-67611.htm" title="动物疫苗有效期多久啊多少钱（动物疫苗保质期多久）">动物疫苗有效期多久啊多少钱（动物疫苗保质期多久）</a></li>
+                        <li class="py-2"><a href="/news/article-94829.htm" title="自己给宠物注射疫苗多少钱（自己给宠物打疫苗怎么办疫苗证）">自己给宠物注射疫苗多少钱（自己给宠物打疫苗怎么办疫苗证）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
