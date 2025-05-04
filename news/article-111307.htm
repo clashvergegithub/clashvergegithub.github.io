@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-111307.htm" />
+    <meta charset="utf-8">
+    <title>kotlin增加静态扩展函数</title>
+        <meta name="description" content="比方说要为String增加一个cmpByLength方法，并且希望是静态的，可以创建一个StringEx.kt文件，里面这么写： fun String.Companion.cmpByLength(a:" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-111307.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="kotlin增加静态扩展函数" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/6186d4aa4e907eedb22c15e3d29b7631.webp" />
+        <meta property="og:release_date" content="2025-05-04T09:27:50" />
+    <meta property="og:updated_time" content="2025-05-04T09:27:50" />
+        <meta property="og:description" content="比方说要为String增加一个cmpByLength方法，并且希望是静态的，可以创建一个StringEx.kt文件，里面这么写： fun String.Companion.cmpByLength(a:" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kotlin增加静态扩展函数">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">kotlin增加静态扩展函数</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>比方说要为String增加一个cmpByLength方法，并且希望是静态的，可以创建一个StringEx.kt文件，里面这么写：</p> <pre><code class="prism language-kotlin"><span class="token keyword">fun</span> String<span class="token punctuation">.</span>Companion<span class="token punctuation">.</span><span class="token function">cmpByLength</span><span class="token punctuation">(</span>a<span class="token operator">:</span> String<span class="token punctuation">,</span>b<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> Boolean <span class="token punctuation">{<!-- --></span>     <span class="token keyword">return</span> a<span class="token punctuation">.</span>length<span class="token operator">&gt;</span>b<span class="token punctuation">.</span>length <span class="token punctuation">}</span> </code></pre> <p>然后就可以在任意地方调用String.cmpByLength方法了。</p> <hr/> <p><strong>为什么能这样做？</strong><br /> String源码：</p> <pre><code class="prism language-kotlin"><span class="token keyword">public</span> <span class="token keyword">class</span> String <span class="token operator">:</span> Comparable<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span><span class="token punctuation">,</span> CharSequence <span class="token punctuation">{<!-- --></span>     <span class="token keyword">companion</span> <span class="token keyword">object</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span>          <span class="token comment">/**      * Returns a string obtained by concatenating this string with the string representation of the given [other] object.      */</span>     <span class="token keyword">public</span> <span class="token keyword">operator</span> <span class="token keyword">fun</span> <span class="token function">plus</span><span class="token punctuation">(</span>other<span class="token operator">:</span> Any<span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator">:</span> String      <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">val</span> length<span class="token operator">:</span> Int      <span class="token comment">/**      * Returns the character of this string at the specified [index].      *      * If the [index] is out of bounds of this string, throws an [IndexOutOfBoundsException] except in Kotlin/JS      * where the behavior is unspecified.      */</span>     <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token keyword">get</span><span class="token punctuation">(</span>index<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> Char      <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">subSequence</span><span class="token punctuation">(</span>startIndex<span class="token operator">:</span> Int<span class="token punctuation">,</span> endIndex<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> CharSequence      <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">compareTo</span><span class="token punctuation">(</span>other<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token punctuation">}</span> </code></pre> <p>其中companion object，是实现静态方法的关键之一；让类中的某一个方法变成静态方法的调用方式，可以在companion object中追加方法。之后就可以通过kotlin将没有定义在任何类中的方法编译为静态方法的特性，也就是顶层方法，就可以实现静态方法啦~<br /> （好像不放在额外的文件里也可以。。。）</p> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-110471.htm">宠物美容店要什么许可证（宠物美容店应该在哪经营）</a></p>
+                                        <p>下一个：<a href="/news/article-111308.htm">动物医院的英文单词怎么写的呀（动物医院的英文单词怎么写的呀）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-13-clash-verge-rev-github.htm" title="4月13日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月13日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-89560.htm" title="长沙宠物救助站电话号码 长沙宠物救助站电话号码多少">长沙宠物救助站电话号码 长沙宠物救助站电话号码多少</a></li>
+                        <li class="py-2"><a href="/news/article-109628.htm" title="动物医院好评模板范文大全集图片（动物医院大众点评评语）">动物医院好评模板范文大全集图片（动物医院大众点评评语）</a></li>
+                        <li class="py-2"><a href="/news/article-104625.htm" title="长沙宠物领养中心哪家好点 长沙宠物领养中心哪家好点呢">长沙宠物领养中心哪家好点 长沙宠物领养中心哪家好点呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-4-free-clash-verge-rev-node.htm" title="4月4日→21.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月4日→21.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-free-subscribe-node.htm" title="4月10日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月10日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-100035.htm" title="动物防疫疫苗中标公告查询 动物防疫疫苗中标公告查询官网">动物防疫疫苗中标公告查询 动物防疫疫苗中标公告查询官网</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-14-free-node-subscribe.htm" title="4月14日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月14日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-89559.htm" title="C#实现文件Move和Copy操作_C#教程_">C#实现文件Move和Copy操作_C#教程_</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-20-clash-verge-rev-node-share.htm" title="4月20日→22.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月20日→22.9M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

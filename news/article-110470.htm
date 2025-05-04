@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-110470.htm" />
+    <meta charset="utf-8">
+    <title>vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】</title>
+        <meta name="description" content="当开发完前端工程后，执行npm run build进行打包 npm run build 默认会生成dist文件夹&nbsp; 里面包含了整个前端项目处理后的静态文件 进入dist文件夹&nbsp; 复" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-110470.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/67263e0420e3e0da73b5171519a0b5ff.webp" />
+        <meta property="og:release_date" content="2025-05-03T10:28:34" />
+    <meta property="og:updated_time" content="2025-05-03T10:28:34" />
+        <meta property="og:description" content="当开发完前端工程后，执行npm run build进行打包 npm run build 默认会生成dist文件夹&nbsp; 里面包含了整个前端项目处理后的静态文件 进入dist文件夹&nbsp; 复" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Clash Verge Github</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/free-nodes/" class="nav-link">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>当开发完前端工程后，执行<span style="color:#956fe7;"><strong>npm run build</strong></span>进行打包</p> <pre><code>npm run build</code></pre> <p>默认会生成<span style="color:#956fe7;"><strong>dist</strong></span>文件夹&nbsp; 里面包含了整个前端项目处理后的静态文件</p> <p>进入<span style="color:#956fe7;"><strong>dist</strong></span>文件夹&nbsp; 复制里面的所有文件</p> <p>进入到<span style="color:#956fe7;"><strong>springboot</strong></span>项目中</p> <p>在<span style="color:#956fe7;"><strong>resources</strong></span>目录下新建<strong><span style="color:#956fe7;">static</span></strong>文件夹</p> <p>将刚才从<strong><span style="color:#956fe7;">dist</span></strong>复制的文件粘贴到<span style="color:#956fe7;"><strong>static</strong></span>里面</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220603/35e5fab543f17c2cf7a66e29f8da5203.jpg"></p> <p>&nbsp;这个时候就整合到一块了</p> <p>此时<span style="color:#956fe7;"><strong>index.html</strong></span>默认引入的静态资源路径可能会有虚线警告</p> <p>无视它就行了，因为这个路径是没问题的</p> <p>然后运行<span style="color:#956fe7;"><strong>springboot</strong></span>项目<strong><span style="color:#956fe7;">shift+F10</span></strong></p> <p>访问后端启动地址就能访问到项目了</p> <hr/> <p>最终开发完毕后要上传到服务器时</p> <p>先将此<span style="color:#956fe7;"><strong>maven</strong></span>项目打包</p> <p>如图所示</p> <p>点击执行<strong><span style="color:#956fe7;">mvn package</span></strong>就会打包了</p> <pre><code>mvn package</code></pre> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220603/b7f67cbdeca9d5bb3290b345e4342960.jpg"></p> <p>&nbsp;打包完毕后会在项目目录中生成一个<strong><span style="color:#956fe7;">target</span></strong>文件夹</p> <p>里面有一个<strong><span style="color:#956fe7;">.jar</span></strong>结尾的文件包就是目标产物</p> <p>还有一个<strong><span style="color:#956fe7;">.jar.original</span></strong>用不到&nbsp; 请无视它</p> <hr/> <p>将<strong><span style="color:#956fe7;">.jar</span></strong>结尾的文件通过XFTP上传到服务器根目录（<strong><span style="color:#956fe7;">/root</span></strong>）下</p> <p><span style="color:#a5a5a5;"><em>如何使用Xshell XFTP 请看我的另一篇文章，安装JDK、nginx、mysql的那篇文章</em></span></p> <p><img fetchpriority="high" decoding="async" alt="" height="201" src="http://img.555519.xyz/uploads3/20220603/848c4749c687b49e76f06d45ed161f96.jpg"></p> <p>&nbsp;然后在<span style="color:#956fe7;"><strong>linux</strong></span>命令行执行命令运行<span style="color:#956fe7;"><strong>jar</strong></span>文件</p> <p><strong><span style="color:#956fe7;">***</span></strong>就是你自己的<span style="color:#956fe7;"><strong>jar</strong></span>文件名</p> <pre><code>java -jar ***.jar</code></pre> <p>执行这句代码让程序一直在后端运行</p> <p>这样即使关闭<span style="color:#956fe7;"><strong>xshell</strong></span>连接也能访问到项目</p> <pre><code>nohup java -jar  ***.jar  &amp;</code></pre> <p>然后输入公网IP+端口就能访问了</p> <p>如果这边文章对你有那么一点点帮助，请点个赞再走，这会对我很有帮助！</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109629.htm">国货猫粮排行榜前十名（2021年国产猫粮推荐与测评）</a></p>
+                                        <p>下一个：<a href="/news/article-110471.htm">宠物美容店要什么许可证（宠物美容店应该在哪经营）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-91837.htm" title="领养狐狸领养证（huxly领养）">领养狐狸领养证（huxly领养）</a></li>
+                        <li class="py-2"><a href="/news/article-102189.htm" title="通过反射获取Class对象的四种方式">通过反射获取Class对象的四种方式</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-5-4-free-high-speed-nodes.htm" title="5月4日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">5月4日→19.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-94829.htm" title="自己给宠物注射疫苗多少钱（自己给宠物打疫苗怎么办疫苗证）">自己给宠物注射疫苗多少钱（自己给宠物打疫苗怎么办疫苗证）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-node-share-links.htm" title="4月7日→22.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月7日→22.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-94267.htm" title="宠物店里的猫粮好吗 宠物店里的猫粮好吗安全吗">宠物店里的猫粮好吗 宠物店里的猫粮好吗安全吗</a></li>
+                        <li class="py-2"><a href="/news/article-100744.htm" title="狗狗领养协议有法律效力吗知乎（狗狗领养协议有法律效力吗知乎文章）">狗狗领养协议有法律效力吗知乎（狗狗领养协议有法律效力吗知乎文章）</a></li>
+                        <li class="py-2"><a href="/news/article-101399.htm" title="动物防疫免税吗最新消息（动物防疫免税吗最新消息）">动物防疫免税吗最新消息（动物防疫免税吗最新消息）</a></li>
+                        <li class="py-2"><a href="/news/article-107145.htm" title="南京哪里可以免费领养猫咪的地方（南京哪里能领养猫）">南京哪里可以免费领养猫咪的地方（南京哪里能领养猫）</a></li>
+                        <li class="py-2"><a href="/news/article-104625.htm" title="长沙宠物领养中心哪家好点 长沙宠物领养中心哪家好点呢">长沙宠物领养中心哪家好点 长沙宠物领养中心哪家好点呢</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
