@@ -1,4 +1,4 @@
-# 11月2日→20.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址  更新时间 2025-11-02 08:35:48
+# 11月8日→20.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址  更新时间 2025-11-08 10:08:15
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashvergegithub.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashvergegithub.github.io/uploads/2025/11/0-20251102.yaml
-- https://clashvergegithub.github.io/uploads/2025/11/1-20251102.yaml
-- https://clashvergegithub.github.io/uploads/2025/11/2-20251102.yaml
-- https://clashvergegithub.github.io/uploads/2025/11/3-20251102.yaml
-- https://clashvergegithub.github.io/uploads/2025/11/4-20251102.yaml
+- https://clashvergegithub.github.io/uploads/2025/11/0-20251108.yaml
+- https://clashvergegithub.github.io/uploads/2025/11/1-20251108.yaml
+- https://clashvergegithub.github.io/uploads/2025/11/2-20251108.yaml
+- https://clashvergegithub.github.io/uploads/2025/11/3-20251108.yaml
+- https://clashvergegithub.github.io/uploads/2025/11/4-20251108.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashvergegithub.github.io/uploads/2025/11/0-20251102.txt
-- https://clashvergegithub.github.io/uploads/2025/11/1-20251102.txt
-- https://clashvergegithub.github.io/uploads/2025/11/2-20251102.txt
-- https://clashvergegithub.github.io/uploads/2025/11/3-20251102.txt
-- https://clashvergegithub.github.io/uploads/2025/11/4-20251102.txt
+- https://clashvergegithub.github.io/uploads/2025/11/0-20251108.txt
+- https://clashvergegithub.github.io/uploads/2025/11/1-20251108.txt
+- https://clashvergegithub.github.io/uploads/2025/11/2-20251108.txt
+- https://clashvergegithub.github.io/uploads/2025/11/3-20251108.txt
+- https://clashvergegithub.github.io/uploads/2025/11/4-20251108.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashvergegithub.github.io/uploads/2025/11/20251102.json
+- https://clashvergegithub.github.io/uploads/2025/11/20251108.json
 
 ## 更多Clash节点订阅 ：
 
