@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashvergegithub.github.io/news/article-195924.htm" />
+    <meta charset="utf-8">
+    <title>全面解析Shadowrocket与OBFS技术的结合使用：打造更加安全的网络体验</title>
+        <meta name="description" content="引言：跨越网络限制，保护在线隐私
+随着互联网的普及与发展，网络自由已经成为现代用户的一项基本需求。然而，网络审查和内容过滤仍然在许多国家和地区存在，用户难以享受无障碍的互联网体验。为了突破这些限制，科" />
+        <link rel="icon" href="/assets/website/img/clashvergegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Verge Github机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashvergegithub.github.io/news/article-195924.htm" />
+    <meta property="og:site_name" content="Clash Verge Github机场节点分享官网" />
+    <meta property="og:title" content="全面解析Shadowrocket与OBFS技术的结合使用：打造更加安全的网络体验" />
+    <meta property="og:image" content="https://clashvergegithub.github.io/uploads/20240909/67263e0420e3e0da73b5171519a0b5ff.webp" />
+        <meta property="og:release_date" content="2026-01-05T11:08:23" />
+    <meta property="og:updated_time" content="2026-01-05T11:08:23" />
+        <meta property="og:description" content="引言：跨越网络限制，保护在线隐私
+随着互联网的普及与发展，网络自由已经成为现代用户的一项基本需求。然而，网络审查和内容过滤仍然在许多国家和地区存在，用户难以享受无障碍的互联网体验。为了突破这些限制，科" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pe-7 icon -->
+    <link href="/assets/website/css/clashvergegithub/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashvergegithub/owl.theme.default.min.css">
+    <!-- css -->
+    <link href="/assets/website/css/clashvergegithub/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/clashvergegithub/style.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="全面解析Shadowrocket与OBFS技术的结合使用：打造更加安全的网络体验">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B0MSD7J3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B0MSD7J3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6957240247502121" crossorigin="anonymous"></script></head>
+
+<body data-page="detail">
+        <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="/">
+                            <span>Vless/Clash/V2ray节点更新</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="" data-feather="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                        <a href="/" class="nav-link">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/paid-subscribe/" class="nav-link">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/client.htm" class="nav-link">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a href="/news/" class="nav-link">新闻资讯</a>
+                    </li>
+                                    </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Start -->
+    <section class="hero-5-bg position-relative bg-light" id="home" style="height:500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin-top: 4rem;">
+                        <h1 class="hero-5-title line-height-1_4 mb-4">全面解析Shadowrocket与OBFS技术的结合使用：打造更加安全的网络体验</h1>
+                        <p class="text-muted mb-4 pb-3">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/website/img/clashvergegithub/hero-5-img.png" alt="Clash Verge Github hero" class="hero-5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="row">
+                    <div class="col-md-9">
+                        <input type="hidden" id="share-website-info" data-name="Verge Clash节点订阅官网" data-url="https://vergeclash.github.io">
+<div class="xcblog-blog-detail xcblog-blog-detail-defined">
+    
+<h2 data-start="48" data-end="71" class=""><strong data-start="51" data-end="71">引言：跨越网络限制，保护在线隐私</strong></h2>
+<p data-start="73" data-end="247" class="">随着互联网的普及与发展，网络自由已经成为现代用户的一项基本需求。然而，网络审查和内容过滤仍然在许多国家和地区存在，用户难以享受无障碍的互联网体验。为了突破这些限制，科学上网成为了许多人获取自由访问的重要手段。而在众多科学上网工具中，<strong data-start="189" data-end="205">Shadowrocket</strong>在iOS平台上独占鳌头，凭借其强大的代理服务和灵活的配置选项，赢得了大量用户的青睐。</p>
+<p data-start="249" data-end="356" class="">在这篇文章中，我们将深入解析Shadowrocket这一强大工具，并结合<strong data-start="285" data-end="293">OBFS</strong>技术，探讨如何有效提升网络安全性和匿名性。无论你是初次接触科学上网，还是有一定经验的用户，相信这篇文章都能为你提供实用的帮助。</p>
+<hr data-start="358" data-end="361" class="" style="">
+<h2 data-start="363" data-end="386" class=""><strong data-start="366" data-end="386">什么是Shadowrocket？</strong></h2>
+<p data-start="388" data-end="567" class=""><strong data-start="388" data-end="404">Shadowrocket</strong>是一款为iOS平台用户设计的科学上网工具，它通过代理协议帮助用户突破地域限制，保护上网隐私。作为一款功能强大的应用，Shadowrocket不仅支持多种代理协议，如<strong data-start="486" data-end="495">V2Ray</strong>、<strong data-start="496" data-end="511">Shadowsocks</strong>，还提供了流量统计、自动规则选择等实用功能。用户只需要通过配置和选择合适的服务器，即可实现快速且安全的上网体验。</p>
+<h3 data-start="569" data-end="595" class=""><strong data-start="573" data-end="595">Shadowrocket的主要功能：</strong></h3>
+<ol data-start="597" data-end="854">
+<li data-start="597" data-end="696" class="" style="">
+<p data-start="600" data-end="696" class=""><strong data-start="600" data-end="610">代理服务选择</strong>：Shadowrocket支持多种常见的代理协议，如<strong data-start="636" data-end="645">V2Ray</strong>、<strong data-start="646" data-end="661">Shadowsocks</strong>等。用户可以根据自己的需求选择不同的代理类型，获得更优的速度和稳定性。</p>
+</li>
+<li data-start="701" data-end="769" class="" style="">
+<p data-start="704" data-end="769" class=""><strong data-start="704" data-end="712">流量统计</strong>：为了帮助用户管理流量使用，Shadowrocket提供了详细的流量统计功能，用户可以实时查看自己的数据使用情况。</p>
+</li>
+<li data-start="774" data-end="854" class="" style="">
+<p data-start="777" data-end="854" class=""><strong data-start="777" data-end="787">自动规则选择</strong>：通过设置规则，Shadowrocket能够根据不同的网络请求自动选择使用的代理。这样，用户无需手动干预，便能轻松享受流畅的上网体验。</p>
+</li>
+</ol>
+<hr data-start="856" data-end="859" class="" style="">
+<h2 data-start="861" data-end="876" class=""><strong data-start="864" data-end="876">什么是OBFS？</strong></h2>
+<p data-start="878" data-end="984" class="">在使用Shadowrocket进行科学上网时，**OBFS（Obfuscation）**技术的引入使得网络安全性得到进一步提升。OBFS是一种流量混淆技术，旨在隐藏数据包的真实特征，从而避免被网络审查工具检测到。</p>
+<h3 data-start="986" data-end="1004" class=""><strong data-start="990" data-end="1004">OBFS技术的作用：</strong></h3>
+<ol data-start="1006" data-end="1257">
+<li data-start="1006" data-end="1105" class="" style="">
+<p data-start="1009" data-end="1105" class=""><strong data-start="1009" data-end="1019">隐匿流量特征</strong>：通过对流量进行混淆处理，OBFS能够将使用代理的流量伪装成普通的网络流量，从而避免被深度包检测（DPI）技术检测到。这样，即使在严格的网络审查环境中，用户也能保持隐匿性。</p>
+</li>
+<li data-start="1110" data-end="1185" class="" style="">
+<p data-start="1113" data-end="1185" class=""><strong data-start="1113" data-end="1123">提高访问速度</strong>：OBFS还能够通过提高数据包发送的频率，优化网络连接，提升访问速度。这对于观看视频、玩在线游戏等需求高带宽的活动尤为重要。</p>
+</li>
+<li data-start="1190" data-end="1257" class="" style="">
+<p data-start="1193" data-end="1257" class=""><strong data-start="1193" data-end="1202">增强安全性</strong>：OBFS的混淆功能能够有效防止流量分析工具识别代理行为，增加网络通信的安全性，确保用户的数据不被窃取或监视。</p>
+</li>
+</ol>
+<p data-start="1259" data-end="1312" class="">通过将OBFS与Shadowrocket结合使用，用户可以更有效地绕过网络审查，保护自己的网络隐私和安全。</p>
+<hr data-start="1314" data-end="1317" class="" style="">
+<h2 data-start="1319" data-end="1351" class=""><strong data-start="1322" data-end="1351">如何在Shadowrocket中启用OBFS技术？</strong></h2>
+<p data-start="1353" data-end="1417" class="">接下来，我们将详细介绍如何在Shadowrocket中配置并启用OBFS技术。通过以下步骤，你可以轻松提升上网的隐匿性和安全性。</p>
+<h3 data-start="1419" data-end="1448" class=""><strong data-start="1423" data-end="1448">步骤一：下载并安装Shadowrocket</strong></h3>
+<p data-start="1450" data-end="1536" class="">首先，你需要从App Store下载并安装Shadowrocket。请注意，Shadowrocket是一款收费应用，你可以在购买前先查看用户评价和反馈，确保它符合你的需求。</p>
+<h3 data-start="1538" data-end="1558" class=""><strong data-start="1542" data-end="1558">步骤二：选择合适的服务器</strong></h3>
+<p data-start="1560" data-end="1707" class="">安装完成后，打开Shadowrocket应用，进入主界面。点击界面中的“配置”按钮，选择一个合适的VPN服务器。你可以选择V2Ray或Shadowsocks协议的服务器，具体取决于你的需求。一般来说，你需要购买或获取一个合适的服务器账号，并输入相关配置信息（如服务器地址、端口号、加密方式等）。</p>
+<h3 data-start="1709" data-end="1729" class=""><strong data-start="1713" data-end="1729">步骤三：启用OBFS选项</strong></h3>
+<p data-start="1731" data-end="1873" class="">在配置界面中，找到“OBFS”选项并开启此功能。通常情况下，Shadowrocket支持多种混淆方式，如<strong data-start="1783" data-end="1796">obfs-http</strong>和<strong data-start="1797" data-end="1809">obfs-tls</strong>。选择合适的混淆类型，并根据提示输入相关的密码和参数。这里的密码一般是你所选择的V2Ray或Shadowsocks服务器的密码。</p>
+<ul data-start="1875" data-end="1964">
+<li data-start="1875" data-end="1919" class="" style="">
+<p data-start="1877" data-end="1919" class=""><strong data-start="1877" data-end="1890">obfs-http</strong>：适用于一些基础的混淆方式，通过HTTP协议进行流量伪装。</p>
+</li>
+<li data-start="1920" data-end="1964" class="" style="">
+<p data-start="1922" data-end="1964" class=""><strong data-start="1922" data-end="1934">obfs-tls</strong>：适用于需要更强隐匿性的环境，利用TLS协议加密和伪装流量。</p>
+</li>
+</ul>
+<h3 data-start="1966" data-end="1985" class=""><strong data-start="1970" data-end="1985">步骤四：保存配置并连接</strong></h3>
+<p data-start="1987" data-end="2094" class="">完成上述配置后，点击“保存”按钮，将你的配置保存。返回到主界面，选择你刚刚配置好的服务器，然后点击“连接”。此时，Shadowrocket会通过你选择的服务器和OBFS技术开始连接，保护你的网络隐私，绕过网络限制。</p>
+<hr data-start="2096" data-end="2099" class="" style="">
+<h2 data-start="2101" data-end="2133" class=""><strong data-start="2104" data-end="2133">使用Shadowrocket与OBFS时的注意事项</strong></h2>
+<p data-start="2135" data-end="2194" class="">尽管Shadowrocket结合OBFS技术为用户提供了更加隐蔽和安全的上网方式，但在使用过程中仍需注意以下几个事项：</p>
+<ol data-start="2196" data-end="2504">
+<li data-start="2196" data-end="2270" class="" style="">
+<p data-start="2199" data-end="2270" class=""><strong data-start="2199" data-end="2211">选择合法的服务器</strong>：使用Shadowrocket时，确保你选择的VPS服务是合法的，避免涉及非法或未经授权的代理服务，以免承担法律风险。</p>
+</li>
+<li data-start="2275" data-end="2362" class="" style="">
+<p data-start="2278" data-end="2362" class=""><strong data-start="2278" data-end="2295">避免在公共Wi-Fi下使用</strong>：在公共Wi-Fi环境下使用Shadowrocket进行敏感操作时，仍然存在一定的安全隐患。尽量避免在不安全的网络环境中传输敏感信息。</p>
+</li>
+<li data-start="2367" data-end="2430" class="" style="">
+<p data-start="2370" data-end="2430" class=""><strong data-start="2370" data-end="2383">定期更新服务器信息</strong>：为了确保服务器的稳定性和安全性，建议定期更换服务器或更新配置，避免使用长时间未更新的服务器。</p>
+</li>
+<li data-start="2432" data-end="2504" class="" style="">
+<p data-start="2435" data-end="2504" class=""><strong data-start="2435" data-end="2445">保护个人隐私</strong>：在使用Shadowrocket时，建议结合强加密协议和混淆技术，增强隐私保护。同时，定期更新账号密码，避免信息泄露。</p>
+</li>
+</ol>
+<hr data-start="2506" data-end="2509" class="" style="">
+<h2 data-start="2511" data-end="2529" class=""><strong data-start="2514" data-end="2529">常见问题解答（FAQ）</strong></h2>
+<h3 data-start="2531" data-end="2566" class=""><strong data-start="2535" data-end="2566">1. Shadowrocket和V2Ray有什么区别？</strong></h3>
+<p data-start="2568" data-end="2695" class="">Shadowrocket本质上是一款代理客户端，而V2Ray是一款强大的代理协议和工具库。用户可以在Shadowrocket中配置并使用V2Ray协议来实现科学上网，因此Shadowrocket与V2Ray可以互为补充，共同为用户提供安全稳定的网络连接。</p>
+<h3 data-start="2697" data-end="2735" class=""><strong data-start="2701" data-end="2735">2. 我在哪里可以找到稳定的Shadowrocket服务器？</strong></h3>
+<p data-start="2737" data-end="2825" class="">用户可以通过一些论坛、社交媒体或代理提供商获取稳定的Shadowrocket服务器。建议选择有良好口碑和技术支持的提供商，避免使用不可靠的服务器，确保网络连接的稳定性和安全性。</p>
+<h3 data-start="2827" data-end="2859" class=""><strong data-start="2831" data-end="2859">3. 使用Shadowrocket时需要付费吗？</strong></h3>
+<p data-start="2861" data-end="2929" class="">是的，Shadowrocket本身是一款付费应用，而且你还需要支付服务器费用。选择合适的VPN或代理服务商可以帮助你享受更好的上网体验。</p>
+<h3 data-start="2931" data-end="2961" class=""><strong data-start="2935" data-end="2961">4. Shadowrocket支持哪些协议？</strong></h3>
+<p data-start="2963" data-end="3053" class="">Shadowrocket支持多种常见的代理协议，如<strong data-start="2988" data-end="2997">V2Ray</strong>、<strong data-start="2998" data-end="3013">Shadowsocks</strong>、<strong data-start="3014" data-end="3029">HTTP/SOCKS5</strong>等。你可以根据自己的需求选择不同的协议进行配置。</p>
+<hr data-start="3055" data-end="3058" class="" style="">
+<h2 data-start="3060" data-end="3098" class=""><strong data-start="3063" data-end="3098">总结：Shadowrocket与OBFS技术为网络隐私保驾护航</strong></h2>
+<p data-start="3100" data-end="3246" class="">通过结合Shadowrocket与OBFS技术，用户能够更好地突破网络审查，实现自由、安全的上网体验。无论是浏览网页、观看视频，还是进行其他在线活动，Shadowrocket都能为你提供高效、隐匿的网络服务。而OBFS技术的引入，则为用户增加了额外的安全保障，确保你的网络行为不被监控和检测。</p>
+<p data-start="3248" data-end="3324" class="">希望通过本文的介绍，你能更好地理解Shadowrocket与OBFS技术的结合使用，并根据自己的需求配置和使用这些工具，享受更加自由、安全的互联网体验。</p></div>
+<div class="clearfix"></div>
+<div class="col-md-12 mt-5">
+        <p>上一个：<a href="/news/article-195513.htm">全面掌握Clash代理：从购买到配置的终极隐私保护指南</a></p>
+    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-179014.htm" title="梅林固件下的KCP加速：解锁科学上网的极速体验">梅林固件下的KCP加速：解锁科学上网的极速体验</a></li>
+                        <li class="py-2"><a href="/news/article-181783.htm" title="深度解析Shadowrocket中文版：从入门到精通的全方位指南">深度解析Shadowrocket中文版：从入门到精通的全方位指南</a></li>
+                        <li class="py-2"><a href="/news/article-187811.htm" title="iOS手机科学上网HB完全手册：从入门到精通的翻墙指南">iOS手机科学上网HB完全手册：从入门到精通的翻墙指南</a></li>
+                        <li class="py-2"><a href="/news/article-184595.htm" title="小米路由器解锁网络自由：手把手教你实现科学上网">小米路由器解锁网络自由：手把手教你实现科学上网</a></li>
+                        <li class="py-2"><a href="/news/article-191452.htm" title="Clash阵容：决胜战场的策略艺术与深度优化指南">Clash阵容：决胜战场的策略艺术与深度优化指南</a></li>
+                        <li class="py-2"><a href="/news/article-189428.htm" title="掌控你的启动项：详解Clash自启动功能的关闭与优化">掌控你的启动项：详解Clash自启动功能的关闭与优化</a></li>
+                        <li class="py-2"><a href="/news/article-188620.htm" title="Quantumult X设备限制全攻略：精准管控与高效配置技巧">Quantumult X设备限制全攻略：精准管控与高效配置技巧</a></li>
+                        <li class="py-2"><a href="/news/article-190644.htm" title="深度揭秘v2ray伪装IP：从原理到实战的全方位指南">深度揭秘v2ray伪装IP：从原理到实战的全方位指南</a></li>
+                        <li class="py-2"><a href="/news/article-194296.htm" title="突破数字藩篱：科学上网安装难题全解析与实战指南">突破数字藩篱：科学上网安装难题全解析与实战指南</a></li>
+                        <li class="py-2"><a href="/news/article-184190.htm" title="解锁网络自由：Windows平台Clash订阅配置终极指南">解锁网络自由：Windows平台Clash订阅配置终极指南</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+        <!-- Footer Start -->
+    <section class="footer" style="background-image: url(/assets/website/img/clashvergegithub/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <p class="text-white-50 f-15 mb-0">
+                                                <p>本站内容仅供学习与技术研究用途，无意传播或倡导任何违反法律法规的行为。在此声明：用户须自行了解所在地法律法规，合法合规使用；因使用不当产生的法律责任，与本站及作者无关；请在使用前仔细阅读本声明，继续使用即视为同意以上条款。</p>
+                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                                <a href="/">Clash Verge Github机场节点分享官网</a> 版权所有 Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- javascript -->
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashvergegithub/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="/assets/website/js/frontend/clashvergegithub/feather-icons.js"></script>
+    <!-- carousel -->
+    <script src="/assets/website/js/frontend/clashvergegithub/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashvergegithub/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
