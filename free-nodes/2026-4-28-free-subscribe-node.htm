@@ -288,39 +288,9 @@ A：推荐加入Clash中文交流群、访问GitHub Issue区，或在Telegram中
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 在高延迟移动网络的优势？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和节点切换，可提高网页浏览、视频播放和游戏连接的稳定性和流畅度。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 如何使用分流策略实现广告屏蔽？</h5></div>
     <div class="panel-body">
         QuantumultX 可通过规则匹配广告域名或路径，将请求重定向或直接阻断。结合策略组，可实现自动屏蔽网页和应用广告，提高用户浏览体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持按端口匹配流量，将不同应用的流量分配到指定节点。结合策略组使用，可实现精准分流，优化访问速度和网络稳定性，提高整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>ShadowsocksR 支持哪些混淆插件？</h5></div>
-    <div class="panel-body">
-        ShadowsocksR 提供多种混淆方式，如 tls1.2_ticket_auth、http_simple、random_head 等。它们通过模拟正常流量特征来规避防火墙检测，使通信更加隐蔽。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 的主要功能是什么？</h5></div>
-    <div class="panel-body">
-        Quantumult X 是一款功能极其强大的 iOS 网络代理应用，支持多种协议和脚本扩展。它可以通过规则分流、广告屏蔽、请求重写等方式优化网络体验。Quantumult X 常被技术用户用于高级自动化与自定义代理策略。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow TUN 模式如何拦截全局流量？</h5></div>
-    <div class="panel-body">
-        TUN 模式会拦截系统 IP 层的所有流量，实现全局代理。相比 SOCKS5 只影响部分应用，TUN 可以覆盖游戏、视频和浏览器等所有流量，提高科学上网体验的全面性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 全局与规则代理如何选择？</h5></div>
-    <div class="panel-body">
-        全局代理将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，用户可根据需求灵活选择模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 能否手动添加节点？</h5></div>
@@ -328,14 +298,44 @@ A：推荐加入Clash中文交流群、访问GitHub Issue区，或在Telegram中
         Potatso Lite 支持手动添加 Shadowsocks 节点。用户在“配置”中选择添加节点，输入服务器、端口、加密方式等信息即可建立连接，适合手动管理单个线路。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持按端口匹配流量，将不同应用的流量分配到指定节点。结合策略组使用，可实现精准分流，优化访问速度和网络稳定性，提高整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 全局与规则代理如何选择？</h5></div>
+    <div class="panel-body">
+        全局代理将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，用户可根据需求灵活选择模式。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 在高延迟移动网络的优势？</h5></div>
+    <div class="panel-body">
+        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和节点切换，可提高网页浏览、视频播放和游戏连接的稳定性和流畅度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 的主要功能是什么？</h5></div>
+    <div class="panel-body">
+        Quantumult X 是一款功能极其强大的 iOS 网络代理应用，支持多种协议和脚本扩展。它可以通过规则分流、广告屏蔽、请求重写等方式优化网络体验。Quantumult X 常被技术用户用于高级自动化与自定义代理策略。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 支持 VLESS 吗？</h5></div>
+    <div class="panel-body">
+        Quantumult X 目前官方未原生支持 VLESS，但通过手动修改配置或第三方脚本可实现兼容。若主要使用 VLESS 协议，可考虑使用 Sing-box 或 Shadowrocket 作为替代。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow TUN 模式如何拦截全局流量？</h5></div>
+    <div class="panel-body">
+        TUN 模式会拦截系统 IP 层的所有流量，实现全局代理。相比 SOCKS5 只影响部分应用，TUN 可以覆盖游戏、视频和浏览器等所有流量，提高科学上网体验的全面性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>如何检查 Clash 连接失败的日志以定位问题？</h5></div>
     <div class="panel-body">
         打开 Clash 的日志面板或查看配置目录下的 log 文件，观察报错信息如 DNS 解析失败、节点拒绝连接或 TLS 握手错误。根据关键字（例如 timeout、refused、certificate）逐项排查并比对服务器配置。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 支持 VLESS 吗？</h5></div>
+    <div class="panel-heading"><h5>ShadowsocksR 支持哪些混淆插件？</h5></div>
     <div class="panel-body">
-        Quantumult X 目前官方未原生支持 VLESS，但通过手动修改配置或第三方脚本可实现兼容。若主要使用 VLESS 协议，可考虑使用 Sing-box 或 Shadowrocket 作为替代。    </div>
+        ShadowsocksR 提供多种混淆方式，如 tls1.2_ticket_auth、http_simple、random_head 等。它们通过模拟正常流量特征来规避防火墙检测，使通信更加隐蔽。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -364,16 +364,16 @@ A：推荐加入Clash中文交流群、访问GitHub Issue区，或在Telegram中
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-3-26-free-high-speed-nodes.htm" title="3月26日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月26日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-29-clash-verge-rev-node.htm" title="3月29日→18.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月29日→18.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-220581.htm" title="2017年iOS科学上网工具全攻略：解锁数字世界的钥匙">2017年iOS科学上网工具全攻略：解锁数字世界的钥匙</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-25-clash-verge-rev-github.htm" title="3月25日→22.6M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月25日→22.6M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-30-clash-verge-rev-windows.htm" title="3月30日→21.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月30日→21.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-9-clash-verge-rev-node.htm" title="5月9日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">5月9日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-20-free-high-speed-nodes.htm" title="4月20日→20.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月20日→20.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-14-node-share-links.htm" title="4月14日→20.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月14日→20.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-11-free-subscribe-node.htm" title="5月11日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">5月11日→21.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-5-2-node-share-links.htm" title="5月2日→21.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">5月2日→21.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-219355.htm" title="《Dungeon Clash》安卓下载与玩法详解：勇闯地牢的终极冒险">《Dungeon Clash》安卓下载与玩法详解：勇闯地牢的终极冒险</a></li>
-                        <li class="py-2"><a href="/news/article-220192.htm" title="vivo手机科学上网全攻略：解锁全球网络自由与安全访问">vivo手机科学上网全攻略：解锁全球网络自由与安全访问</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-21-clash-verge-rev-node-github.htm" title="3月21日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址">3月21日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-19-free-clash-verge-rev-node.htm" title="4月19日→22M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月19日→22M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-15-clash-verge-rev-github.htm" title="4月15日→18.6M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月15日→18.6M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-22-free-subscribe-node.htm" title="4月22日→19.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月22日→19.8M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-latest-clash-verge-rev-node.htm" title="5月6日→20.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址">5月6日→20.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-13-clash-verge-rev-node.htm" title="4月13日→21.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址">4月13日→21.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-1-latest-clash-verge-rev-node.htm" title="5月1日→20M/S|2025年最新免费节点Clash Verge Github订阅链接地址">5月1日→20M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -385,13 +385,10 @@ A：推荐加入Clash中文交流群、访问GitHub Issue区，或在Telegram中
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
