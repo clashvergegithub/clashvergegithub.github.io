@@ -280,29 +280,9 @@ VPN通过在公共网络上创建加密的私人连接隧道，保护用户流�
         Potatso Lite 支持手动测试单个节点延迟，但不支持批量自动测速。用户需逐个连接测试节点性能，或者结合其他客户端获取更全面的测速信息。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 的节点排序依据是什么？</h5></div>
-    <div class="panel-body">
-        Nekoray 默认按节点延迟排序。用户可以自定义排序规则，如按订阅来源、名称或连接成功率排列，从而快速找到性能最佳或最常用的节点。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 如何设置多入口实现不同访问控制？</h5></div>
     <div class="panel-body">
         通过定义多个 inbound，对不同端口绑定不同的 tag 并在路由中匹配流量。可针对内网用户、远程用户或特定 IP 段应用不同规则，实现灵活访问控制与流量隔离。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 的规则文件如何支持广告屏蔽？</h5></div>
-    <div class="panel-body">
-        规则文件可添加广告域名或 URL 列表，将请求重定向或阻断。结合策略组和自动更新，Surfboard 可实现全局广告屏蔽，提高浏览体验并节省带宽。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 是否支持 IPv6 流量代理？</h5></div>
-    <div class="panel-body">
-        Mellow 支持 IPv6，只需在配置文件中启用 IPv6 DNS 解析并确认操作系统开启 IPv6 路由功能。部分节点若不支持 IPv6，则相关请求会自动回退到 IPv4，保证兼容性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何手动设置某应用直连？</h5></div>
-    <div class="panel-body">
-        在 Clash 的规则文件中添加 PROCESS-NAME 规则，如 `PROCESS-NAME,chrome.exe,DIRECT`。保存并重启后，该应用的流量将绕过代理直连。适用于游戏或内网程序等特殊场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash for Android 如何导入订阅并自动更新？</h5></div>
@@ -315,9 +295,29 @@ VPN通过在公共网络上创建加密的私人连接隧道，保护用户流�
         Mihomo 支持批量导入、删除和更新节点，结合策略组管理，可高效维护大量节点。用户可以快速选择最佳节点，优化访问速度，同时减少手动操作的复杂度。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 的节点排序依据是什么？</h5></div>
+    <div class="panel-body">
+        Nekoray 默认按节点延迟排序。用户可以自定义排序规则，如按订阅来源、名称或连接成功率排列，从而快速找到性能最佳或最常用的节点。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 是否支持 IPv6 流量代理？</h5></div>
+    <div class="panel-body">
+        Mellow 支持 IPv6，只需在配置文件中启用 IPv6 DNS 解析并确认操作系统开启 IPv6 路由功能。部分节点若不支持 IPv6，则相关请求会自动回退到 IPv4，保证兼容性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 如何通过域名规则实现精准分流？</h5></div>
     <div class="panel-body">
-        Sing-box 支持根据域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组，可实现自动切换最优节点，优化访问速度和网络稳定性，提高整体使用体验。    </div>
+        Sing-box 支持根据域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组，可实现自动切换最优节点，优化访问速度和网络稳定性，提高整体使用体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 的规则文件如何支持广告屏蔽？</h5></div>
+    <div class="panel-body">
+        规则文件可添加广告域名或 URL 列表，将请求重定向或阻断。结合策略组和自动更新，Surfboard 可实现全局广告屏蔽，提高浏览体验并节省带宽。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 如何手动设置某应用直连？</h5></div>
+    <div class="panel-body">
+        在 Clash 的规则文件中添加 PROCESS-NAME 规则，如 `PROCESS-NAME,chrome.exe,DIRECT`。保存并重启后，该应用的流量将绕过代理直连。适用于游戏或内网程序等特殊场景。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -365,16 +365,16 @@ VPN通过在公共网络上创建加密的私人连接隧道，保护用户流�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-7-29.htm" title="7月29日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">7月29日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-18-node-share.htm" title="8月18日→19.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月18日→19.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-25-node-share-links.htm" title="7月25日→19.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址">7月25日→19.7M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-8-19.htm" title="8月19日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月19日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-12-clash-verge-rev-windows.htm" title="8月12日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月12日→18.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-verge-rev-node-2026-8-7.htm" title="8月7日→18.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月7日→18.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-29.htm" title="8月29日→22.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月29日→22.3M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-3.htm" title="9月3日→19.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">9月3日→19.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-6-free-node-subscribe.htm" title="8月6日→20.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月6日→20.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-node-share.htm" title="9月2日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址">9月2日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-23.htm" title="8月23日→18.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月23日→18.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-16-node-share.htm" title="8月16日→21.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月16日→21.5M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-24-free-subscribe-node.htm" title="7月24日→21.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址">7月24日→21.4M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-verge-rev-node-2026-8-25.htm" title="8月25日→22M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月25日→22M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-28-clash-verge-rev-nodes.htm" title="8月28日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月28日→23M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/today-clash-verge-rev-node-2026-8-31.htm" title="8月31日→19.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月31日→19.1M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-22-node-share.htm" title="8月22日→18M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月22日→18M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-verge-rev-node-2026-8-7.htm" title="8月7日→18.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址">8月7日→18.2M/S|2025年最新免费节点Clash Verge Github订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -386,10 +386,10 @@ VPN通过在公共网络上创建加密的私人连接隧道，保护用户流�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
